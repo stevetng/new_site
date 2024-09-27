@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    height: 100%;
+    background-color: #E4DBCF;
+    position: relative;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('grain-texture.png');
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+    background-color: #E4DBCF;
+}
+
+.sidebar {
+    width: 228px;
+    min-width: 228px;
+    background-color: #E4DBCF;
+    padding: 12px;
+}
+
+.sidebar h1 {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 28px; /* Adjust size as needed */
+    margin-bottom: 20px;
+    margin-top: 8px;
+    font-weight: 400;
+    white-space: nowrap;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.sidebar nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar nav li {
+    margin-bottom: 8px;
+}
+
+.sidebar nav a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+.sidebar nav a:hover {
+    background-color: #D3D3D3;
+}
+
+.sidebar nav a.active {
+    background-color: #FFFCF6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle drop shadow */
+}
+
+.sidebar nav a.active:hover {
+    background-color: #FFFCF6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Maintains the shadow on hover */
+}
+
+.sidebar .icon {
+    margin-right: 10px;
+}
+
+.sidebar .number {
+    margin-left: auto;
+    font-size: 16px;
+    width: 24px; /* Set a fixed width */
+    height: 24px; /* Set a fixed height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 4px;
+    background-color: #E8E0D5;
+    position: relative;
+}
+
+.keyboard-shortcut-card {
+    background-color: #F0EAE0;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.keyboard-shortcut-card p {
+    margin: 0;
+    color: #4a4a4a;
+}
+
+#content {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 36px;
+    padding-top: 64px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5px;
+    margin-left: 0px;
+    overflow-y: auto;
+}
+
+#content .intro {
+    display: none;
+}
+
+#content .intro span {
+    display: none;
+}
+
+#content p {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 64px;
+    font-weight: normal;
+    margin: 40px;
+    margin-bottom: 25px;
+    line-height: 1.2; /* Adjust line height for better readability */
+}
+
+#content .underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+#content #silly-software {
+    font-size: 30px;
+    margin: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: 400;
+    line-height: 1.3; /* Adjust line height for better readability */
+}
+
+#content #home-contact-me {
+    font-size: 30px;
+    margin: 40px;
+    margin-top: 10px;
+    font-weight: 400;
+    line-height: 1.3; /* Adjust line height for better readability */
+}
+
+#content a {
+    color: #000;
+    text-decoration: underline;
+}
+
+.location {
+    margin-top: auto;
+    margin-right: 5%;
+    align-self: flex-end;
+    font-size: 30px;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+    #content p {
+        font-size: 52px;
+    }
+    #content #silly-software,
+    #content #home-contact-me {
+        font-size: 26px;
+    }
+    .location {
+        font-size: 26px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    #content p {
+        font-size: 44px;
+        margin: 30px;
+    }
+    #content #silly-software,
+    #content #home-contact-me {
+        font-size: 22px;
+        margin: 30px;
+    }
+    .location {
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body,html {
+        background-color: #fff;
+    }
+    /* .container {
+        flex-direction: column;
+    } */
+
+    #content {
+        margin: 4px;
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+
+    #content .intro {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        font-size: 36px; /* Adjust font size as needed */
+        margin: 10px 0; /* Adjust margin for spacing */
+    }
+
+    #content .intro span {
+        display: inline;
+        margin-bottom: 5px; /* Add spacing between lines */
+    }
+    
+    #content .intro-web{
+        display: none;
+        order: 1;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 70px;
+        border-radius: 0;
+    }
+
+    #content p {
+        font-size: 36px;
+        margin: 20px 10px;
+    }
+
+    #content .steve-intro {
+        font-size: 44px;
+        margin: 20px 10px;
+    }
+
+    #content #silly-software,
+    #content #home-contact-me {
+        font-size: 24px;
+        margin: 15px 10px;
+    }
+
+    .location {
+        display: none;
+        font-size: 24px;
+        margin: 20px 10px;
+    }
+
+    .sidebar {
+        order: 2;
+        width: 100%;
+        padding: 4px 2px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: #E4DBCF;
+        margin-left: 4px;
+    }
+
+    .sidebar nav ul {
+        display: flex;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding: 0;
+        margin: 0;
+        margin-right: 2px;
+    }
+
+    .sidebar nav li {
+        margin: 0;
+    }
+    .hide-on-mobile {
+        display: none;
+    }
+    .sidebar nav a {
+        /* padding: 10px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar .icon {
+        margin-right: 0;
+        font-size: 28px;
+    }
+
+    .sidebar .number,
+    .sidebar h1,
+    .keyboard-shortcut-card,
+    .sidebar nav a span:not(.icon){
+        display: none;
+    }
+    
+}
+
+
+/* iPhone SE (smallest iPhone) width
+@media screen and (max-width: 375px) {
+    #content p {
+        font-size: 24px;
+        margin: 10px;
+    }
+    #content #silly-software,
+    #content #home-contact-me {
+        font-size: 14px;
+        margin: 10px;
+    }
+    .location {
+        font-size: 14px;
+    }
+} */
+
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    position: relative;
+    /* cursor: pointer; */
+}
+
+.popup {
+    position: fixed;
+    background-color: #EBE5DC;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px; /* Reduced padding */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 1001;
+    max-width: 200px; /* Reduced from 250px */
+    width: max-content;
+    font-size: 12px; /* Reduced font size */
+    line-height: 1.3; /* Slightly reduced line height */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    max-height: 150px; /* Added max-height */
+    overflow-y: auto; /* Allow scrolling for taller content */
+}
+
+.popup h3 {
+    font-size: 14px; /* Smaller heading size */
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.popup p, .popup ul {
+    margin: 5px 0; /* Reduced margins */
+}
+
+.popup ul {
+    padding-left: 15px; /* Reduced padding for lists */
+}
+
+.popup a {
+    font-size: 12px; /* Consistent font size for links */
+}
+
+.underline:hover .popup {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
