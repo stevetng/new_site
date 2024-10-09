@@ -13,60 +13,67 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>A <span class="underline">writer</span> who never enjoyed English class.</p>
             </div>
             <p class="intro-web">I'm Steve, a <span class="underline" data-popup="
-                <div style='text-align: center;'>
-                    <h3 style='color: #4a4a4a; margin-bottom: 0px;'>Program Manager</h3>
-                    <p style='font-size: 14px; line-height: 1.4;'>
-                        Experienced in Agile methodologies<br>
-                        Skilled in stakeholder management<br>
-                        Passionate about user-centric design
+                <div style='padding: 4px'>
+                    <h3>ServiceNow</h3>
+                    <span style='position: absolute; top: 20px; right: 24px; font-size: 10px'>‘23 - ‘24</span>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                        I’m a Technical Program Manager for our Automations team and previously for the AI Search team. <br></br>
+                        I learned how process can be necessary at a large company and how to drive delivery of large scale software.
                     </p>
-                    <a href='#' style='color: #0066cc; text-decoration: none;'>Learn more about my PM work</a>
                 </div>
             ">PM</span> who loves to <span class="underline" data-popup="
-                <div>
-                    <h3>Coding Knowledge</h3>
-                    <ul>
-                        <li>Python: Mainly for <a href='https://colab.research.google.com/drive/1rLh0Tvb6NxC00bFpWTpmH5SAbwOvSI8D?usp=sharing' target='_blank'>Stock Trading</a></li>
-                        <li>JavaScript: React, Node.js</li>
-                        <li>Ruby: Rails</li>
-                        <li>SQL & NoSQL databases</li>
-                    </ul>
-                    <a href='https://github.com/yourusername' target='_blank'>Check out my GitHub</a>
+                <div style='padding: 4px';>
+                    <h3>Software</h3>
+                    <p style='font-size: 12px; margin-top: 12px; margin-bottom:12px;'>
+                        I like when software intersects with delight, play and silliness. <br></br>
+                        I’m decent with JS frameworks like React + Next.js and by decent I mean I can prompt until something mostly works.
+                    </p>
+                    <a href='https://github.com/stevetng' target='_blank'>Check out my GitHub</a>
                 </div>
             "
             ">code</span>, an iPhone
             <span class="underline" data-popup="
-                <div>
-                    <img src='/api/placeholder/200/150' alt='Video equipment' style='width: 100%; height: auto; margin-bottom: 10px;'>
-                    <p style='font-size: 14px; line-height: 1.4; margin: 0;'>
-                        Experienced in both digital and film videography.<br>
-                        Specialties: Documentary, Corporate, Event
+                <div style='padding: 4px'>
+                    <h3>Videography</h3>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                        I like to document my life in videos so my future kids can see how I was <a href='https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link' target='_blank'>a cool guy</a>.
+                        <br></br>
+                        I also like how unbounded creativity can be in videos so making videos for a purpose like <a href='https://x.com/WoahIsThatSteve/status/1805030499049513338' target='_blank'>marketing's</a> cool too.
                     </p>
-                    <a href='#' style='color: #0066cc; text-decoration: none;'>View my videography portfolio</a>
                 </div>
             ">videographer</span>, and a <span class="underline" data-popup="
-                <div>
-                    <h3 style='color: #4a4a4a; margin-bottom: 10px;'>Writing Portfolio</h3>
-                    <p style='font-size: 14px; line-height: 1.4;'>
-                        Published author of short stories and technical articles.<br>
-                        Topics include tech trends, creative fiction, and product reviews.
+                <div style='padding: 4px'>
+                    <h3>Writing</h3>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                    I like to journal intensely, live life intensely without writing, and then journal intensely again.
+                    <br></br>
+                    When I feel like people can benefit from a unique perspective I have, I write to change their mind.
+                    <br></br>
+                    <a href='https://steviesteve.bearblog.dev/people-dont-need-to-be-in-your-life-forever/' target='_blank'>Recent piece</a> on how people don’t need to be in your life forever.
                     </p>
-                    <ul style='padding-left: 20px; margin: 10px 0;'>
-                        <li>Featured in TechCrunch</li>
-                        <li>Regular contributor to Medium</li>
-                        <li>2x winner of local short story contest</li>
-                    </ul>
-                    <a href='#' style='color: #0066cc; text-decoration: none;'>Read my latest articles</a>
                 </div>
             ">writer</span> 
             who never enjoyed English class.</p>
-            <p id="silly-software">I like making <a href="https://www.techbropuritytest.com/" target="_blank">silly software</a> and <a href="#" target="_blank">marketing videos</a> for startups.</p>
-            <p id="home-contact-me"><a href="#">Contact me</a> for front-end/marketing work on a contract basis.</p>
-            <div class="location">Currently: Boston, MA</div>
+            <p id="silly-software">I like making <a href="https://www.techbropuritytest.com/" target="_blank">silly software</a> and <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">marketing videos</a> for startups.</p>
+            <p id="home-contact-me"><a href="mailto:stevetn123@gmail.com">Contact me</a> for front-end/marketing work on a contract basis.</p>
+            <div class="location">Currently: Brooklyn, NY</div>
         `,
         about: `
-            <h2>About Me</h2>
-            <p id="silly-software">This is the About page content.</p>
+            <div class="about-section">
+                <div id="about-section-one">
+                    <h2>“You can just do things.”</h2>
+                    <p>Taking this to heart, here’s a taste of what I’ve done:</p>
+                    <br></br>
+                    <p>♟️ I was cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s&pp=ygUQYm90ZXpsaXZlIDUgdnMgMQ%3D%3D" target="_blank">Botez Sisters</a> video for the chance to win $1,000.</p>
+                    <br></br>
+                    <p>🥳 I threw a Steve-themed 21st birthday party where 200 people dressed up as a <a href="https://www.instagram.com/p/CdMqGEdlbJr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">historic Steve</a>.</p>
+                    <br></br>
+                    <p>📝 I made a <a href="https://www.techbropuritytest.com/" target="_blank">tech bro purity test</a> that Primeagen, Theo.gg and 50,000+ other people thought was funny.</p>
+                </div>
+                <div id="about-section-two">
+                    <img src="polaroid.png" alt="Description of image" />
+                </div>
+            </div>
         `,
         silly: `
             <h2>silly</h2>
