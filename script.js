@@ -125,14 +125,49 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Consuming</h2>
                 <p>
-                    
+                    A work in progress. Learn more about me through my Youtube recommended, my favorite blogs that changed the way I think and media that shaped how I exist in the world.
                 </p>
-                <img src="yt_rec.png" width="100%">
+                <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
+                <p>
+                My favorite blogs:
+                    <li><a href="paulgraham.com"target="_blank">Paul Graham</a> - specifically his writing on <a href="https://paulgraham.com/cities.html"target="_blank">cities</a>. This post kick started my brain on how to describe cities beyong the generic descriptors like food quality + public transporation people usually cite. My take? Choose a city where you feel most like yourself.</li>
+                    <li><a href="https://worksinprogress.co/"target="_blank">Works in Progress</a> - specifically the piece on <a href="https://worksinprogress.co/issue/why-prediction-markets-arent-popular/"target="_blank">prediction markets</a>. This blog opened my eyes to what makes writing truly persuasive. The writers for works in progress are quite good at presenting an argument and addressing counter arguments the moment you begin to think of them.</li>
+                    <li><a href="https://www.avabear.xyz/about"target="_blank">Ava Bookbear</a> - specifically the piece on <a href="https://www.avabear.xyz/p/the-true-shape-of-a-thing"target="_blank">the true shape of a thing</a>. If something feels good, you can just do it and continue doing it, sharing it with the world and seeing where it takes you. Ava consistently puts the complex into digestible, impactful writing.</li>
+                </p>
+                <p>
+                Media that fundamentally changed me.
+                    <li>Season 2, Episode 7 of <a href="https://en.wikipedia.org/wiki/The_Bear_(TV_series)"target="_blank">The Bear</a> – “Forks”. It's never and I mean never too late to redefine yourself. You can just do things.</li>
+                    <li><a href="https://www.imdb.com/title/tt2194499/"target="_blank">About Time</a> - About Time is like a warm hug that will comfort you at all the different phases of life. Love is not about being perfect. Stop living life like you wanted a second chance at everyday. Take whatever life throws at you and face it with grace. </li>
+                    <li><a href="https://www.amazon.com/When-Breath-Becomes-Paul-Kalanithi/dp/081298840X"target="_blank">When Breath Becomes Air - Paul Kalanithi</a> - There’s no one better to talk about life than those who are closest to death. This book conviced me that I can pursue a "higher calling" while not getting lost that pursuit. That I can also find meaning in the mundane. </li>
+                    <li><a href="https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0061122416"target="_blank">The Alchemist - Paulo Coelho</a> - When you vocalize your goals + dreams into the world, the whole world conspires to help you get there. If love is meant to be, letting go will not mean it's gone.</li>
+                </p>
             </div>
         `,
         sparkly:  `
-            <h2>Sparkly</h2>
-            <p id="silly-software">This is the Sparkly page content.</p>
+            <div class="feed-content">
+                <h2>Sparkly People</h2>
+                <p>
+                    Sparkly people are the ones who give me energy. The ones where I leave interactions with them saying... wow. These people have been either incredibly consistent with their magic in my life or I've had a high concentration of magic in my limited interactions with them.
+                </p>
+                <ol>
+                    <li><a href="https://avonarnim.github.io/" target="_blank">Adam Von Arnim</a> - an endless sense of humor + wonder for the world.</li>
+                    <li><a href="https://mariofigueroa.space" target="_blank">Mario Figueroa</a> - a relentless pursuit of craft + polish. Never met someone with better taste in memes, but also style.</li>
+                    <li><a href="https://jwang.work" target="_blank">Jess Wang</a> - a rare combination of wisdom and silliness with a heavy dose of creativity.</li>
+                    <li><a href="https://ariellelok.com/about.html" target="_blank">Arielle Lok</a> - living embodiment of "you can just do things".</li>
+                    <li><a href="https://www.clairebookworm.com/" target="_blank">Claire Wang</a> - a wonderful co-host. Silly, thoughtful, friendliest bean.</li>
+                    <li><a href="https://ansonyu.me" target="_blank">Anson Yu</a> - a good friend once described her as the rare case of energetic irl and online.</li>
+                    <li><a href="https://www.hudzah.com/" target="_blank">HudZah</a> - I walked into his room once and he was building a nuclear fusor. Curiosity could never kill the cat.</li>
+                    <li><a href="https://x.com/abigaillafrica?lang=en" target="_blank">Beez</a> - a force of nature. A fiercely loyal friend and a properly critical editor.</li>
+                    <li><a href="https://www.linkedin.com/in/gitikapahwa/" target="_blank">Gitika Pahwa</a> - clever, witty and resilient. Really good at call backs.</li>
+                    <li><a href="https://www.instagram.com/tobi.og/" target="_blank">Tobi Ogunyankin</a> - silly. Coolest sense of style, killer dance moves and INCREDIBLE storytelling.</li>
+                    <li><a href="https://joelyoon.com/" target="_blank">Joel Yoon</a> - he's wired differently but in this case, he was the electrician doing the rewiring.</li>
+                    <li><a href="https://www.samvictoria.co/" target="_blank">Samuel Victoria</a> - an immensely loyal friend. Creative, thoughtful and a hustler.</li>
+                    <li><a href="https://www.instagram.com/amiyoshimura_/" target="_blank">Ami Yoshimura</a> - the king of community building. Thoughtful and dedicated super connector.</li>
+                    <li><a href="https://www.rishi.cx/" target="_blank">Rishi Kothari</a> - the best person to stroll around Harvard campus with. Curious, kind and delightful.</li>
+                    <li><a href="https://substack.com/@alexanderao" target="_blank">Alex Chueh</a> - meets a new person every single day. Living example of seeking discomfort.</li>
+                    <li><a href="mailto:stevetn123@gmail.com" target="_blank">Maybe you?</a> - if you're someone who lets curiosity + serendipity guide you, reach out, I'd love to hang out.</li>
+                </ol>
+            </div>
          `,
         hosting: `
             <h2>Hosting</h2>

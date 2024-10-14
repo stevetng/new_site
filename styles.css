@@ -627,3 +627,7 @@ body::after {
         height: auto;
     }
 }
+
+#content .feed-content li {
+    margin-bottom: 8px;
+}
