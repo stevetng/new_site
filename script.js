@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://github.com/stevetng/sports_narrator" class="project-card" target="_blank">
                     <img id="preview1" src="" alt="Preview Image" width="100%">
                     <h2>News, but make it sports.</h2>
-                    <p> I used the the EXA and Open AI APIs to fetch and then summarize the latest political news in the tone of a sports narrator so they'd be more interesting to read.</p>
+                    <p> I used the EXA and Open AI APIs to fetch and then summarize the latest political news in the tone of a sports broadcaster.</p>
                 </a>
                 <a href="https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link" class="project-card" target="_blank">
                     <img id="preview2" src="" alt="Preview Image" width="100%">
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <a href="https://www.techbropuritytest.com/" class="project-card" target="_blank">
                     <img id="preview4" src="" alt="Preview Image" width="100%">
                     <h2>Tech Bro Purity Test</h2>
-                    <p>Inspired by some VERY prototypical experiences with tech bros, I decided to make this. (My score's 67)</p>
+                    <p>Inspired by some VERY stereotypical experiences with tech bros, I decided to make this. (My score's 67)</p>
                 </a>
             </div>
         `,
@@ -147,9 +147,9 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Sparkly People</h2>
                 <p>
-                    Sparkly people are the ones who give me energy. The ones where I leave interactions with them saying... wow. These people have been either incredibly consistent with their magic in my life or I've had a high concentration of magic in my limited interactions with them.
+                    Sparkly people are the ones who give me energy. The ones where I leave interactions with them saying... wow. These people have been either incredibly consistent with the delight they bring to my life or I've had a high concentration of magic in my limited interactions with them.
                 </p>
-                <ol>
+                <ol style="margin-top:0">
                     <li><a href="https://avonarnim.github.io/" target="_blank">Adam Von Arnim</a> - an endless sense of humor + wonder for the world.</li>
                     <li><a href="https://mariofigueroa.space" target="_blank">Mario Figueroa</a> - a relentless pursuit of craft + polish. Never met someone with better taste in memes, but also style.</li>
                     <li><a href="https://jwang.work" target="_blank">Jess Wang</a> - a rare combination of wisdom and silliness with a heavy dose of creativity.</li>
@@ -170,16 +170,67 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
          `,
         hosting: `
-            <h2>Hosting</h2>
-            <p id="silly-software">This is the Hosting page content.</p>
+            <div class="feed-content">
+                <h2>Hosting (Pseudo Blog Post)</h2>
+                <p>
+                    I host events as an excuse to hang out with my friends. By hosting, I (selfishly) can put in some upfront work to set a time and place that works for me and then simply send messages en masse to my friends. The best part? They bring their friends and I get to make new homies :)
+                </p>
+                <div class="hosting-container" style="display:flex; gap:16px">
+                    <div id="hosting-div">
+                        <p>
+                            If you feel like you're missing doing creative work/passion projects with other people, this is my pitch for you to come to <a href="https://lu.ma/beans" target="_blank">Friendly Beans.</a> 
+                        </p>
+                        <p>
+                            We follow the same format every week, I bring Munchkins, we do intros with a fun question, 2 hours~ deep work, we eat Munchkins and then we show each other what we worked on. Food and a purpose for meeting is all you really need to have a good event/hang.
+                        </p>
+                        <p>
+                        It’s also my way of fighting back against the loneliness epidemic. I’ve been able to see others in our community find the friends that make them feel creative and comfortable in their curiosity. 
+                        We've met a ton of really fun friends by making things we care about—and want to find other caring tinkerers!
+                        </p>
+                    </div>
+                    <iframe
+                        src="https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?"
+                        width="50%"
+                        height="450"
+                        frameborder="0"
+                        style="border: 1px solid #bfcbda88; border-radius: 8px; min-width:50%"
+                        allowfullscreen=""
+                        aria-hidden="false"
+                        tabindex="0"
+                        >
+                    </iframe>
+                    
+                
+                    
+            </div>
         `,
         writing: `
-            <h2>Writing</h2>
-            <p id="silly-software">This is the content for Page 8.</p>
+            <div class="feed-content">
+                <h2>Writing</h2>
+                <p>
+                    I explore the answers to life's biggest questions in my writing. Questions like how we can have it all: a career we care about, friendships, family and love. In between, I like to share writing I think can change their mind about how to live life. I want to improve my persuasive writing, so if you have favorites please send :)
+                </p>
+                <p>
+                    I'm in between moving old blog posts to Substack so here's my old Bear Blog and new Substack for your enjoyment.
+                </p>
+                <div id="writing-container">
+                    <iframe
+                        class="bearblog-post-embed"
+                        src="https://steviesteve.bearblog.dev/blog/"
+                        width="50%"
+                        height="350">
+                    </iframe>
+                    <div id="substack-feed-embed"></div>
+                </div>
+            </div>
         `,
         video: `
-            <h2>Video</h2>
-            <p id="silly-software">This is the content for Page 9.</p>
+            <div class="feed-content">
+                <h2>Video</h2>
+                <p>
+                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. The image previews on the page are a little buggy, so currently reworking it.
+                </p>
+            </div>
         `,
     };
 
@@ -223,6 +274,11 @@ document.addEventListener('DOMContentLoaded', function() {
             fetchLinkPreview(link.url, link.imgId);
         });
         window.history.pushState({page: pageName}, pageName, `#${pageName}`);
+
+        const substackScript = document.createElement('script');
+        substackScript.src = "https://substackapi.com/embeds/feed.js";
+        substackScript.async = true;
+        document.body.appendChild(substackScript);
     }
 
     function updateActiveLink(pageName) {
@@ -233,9 +289,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle click navigation
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const pageName = this.getAttribute('data-page');
-            navigateToPage(pageName);
+            if (pageName) {
+                e.preventDefault();
+                navigateToPage(pageName);
+            }
         });
     });
 
@@ -286,17 +344,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const imageUrl = ogImage ? ogImage.content : '';
 
                 const img = document.getElementById(imgId);
-                if (imageUrl) {
-                    img.src = imageUrl;
+                if (img) { // Check if the image element exists
+                    if (imageUrl) {
+                        img.src = imageUrl;
+                    } else {
+                        img.src = 'oopsies.png'; // Set your placeholder image path here
+                        img.alt = 'No preview image found';
+                    }
                 } else {
-                    img.src = 'oopsies.png'; // Set your placeholder image path here
-                    img.alt = 'No preview image found';
+                    console.warn(`Image element with ID ${imgId} not found.`);
                 }
             } catch (error) {
                 console.error(`Error fetching preview for ${url}:`, error);
                 const img = document.getElementById(imgId);
-                img.src = 'oopsies.png'; // Set your placeholder image path here
-                img.alt = 'Failed to load preview';
+                if (img) { // Check if the image element exists
+                    img.src = 'oopsies.png'; // Set your placeholder image path here
+                    img.alt = 'Failed to load preview';
+                }
             }
         }
 
