@@ -257,18 +257,18 @@ body::after {
     }
 
     #content p {
-        font-size: 36px;
+        font-size: 20px;
         margin: 20px 10px;
     }
 
     #content .steve-intro {
-        font-size: 44px;
+        font-size: 28px;
         margin: 20px 10px;
     }
 
     #content #silly-software,
     #content #home-contact-me {
-        font-size: 24px;
+        font-size: 20px;
         margin: 15px 10px;
     }
 
@@ -476,11 +476,11 @@ body::after {
     }
 
     #about-section-one h2 {
-        font-size: 32px; /* Adjust font size for mobile */
+        font-size: 28px; /* Adjust font size for mobile */
     }
 
     #about-section-one p {
-        font-size: 24px; /* Adjust font size for mobile */
+        font-size: 20px; /* Adjust font size for mobile */
     }
 }
 
@@ -518,16 +518,16 @@ body::after {
     }
     
     .feed-content h2 {
-        font-size: 40px;
+        font-size: 28px;
         font-weight: 500;
         margin-top: 0px;
         margin-bottom: 12px;
     }
     .feed-content #tech-test {
-        height: 40%;
+        height: 50%;
     }
     #content .feed-content p {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 400;
         margin: 0;
         padding-bottom: 20px;
@@ -564,7 +564,7 @@ body::after {
     }
     
     .making-content h2 {
-        font-size: 40px;
+        font-size: 28px;
         font-weight: 500;
         margin-top: 0px;
         margin-bottom: 12px;
@@ -573,7 +573,7 @@ body::after {
         height: 50%;
     }
     #content .making-content p {
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 400;
         margin: 0;
         padding-bottom: 20px;
@@ -662,7 +662,7 @@ body::after {
 
     #content .feed-content .hosting-container p {
         width: 100%;
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 

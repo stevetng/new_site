@@ -95,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="making-content">
                 <h2>Making</h2>
                 <p>
-                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. The image previews on the page are a little buggy because I'm trying to scrape the image previews, so currently reworking it - open to advice. Yes, I could just add images myself, but where's the fun in that?
+                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. 
+                </p>
+                <p>
+                The image previews on the page are a little buggy because I'm trying to scrape the image previews, but keep running into CORS issues.
                 </p>
             </div>
             <div class="project-card-container">
@@ -125,13 +128,16 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Consuming</h2>
                 <p>
-                    It's only fitting I include my Youtube recommended that's shaped my taste since I was a little kid watching Ryan Higa + Kev Jumba, my favorite blogs that have shaped my young 20s and the media that's shaped how I view the world.
+                    Youtubers like Ryan Higa and KevJumba shaped my youth, so as a 23 year old, I'm including my Youtube recommended as a reflection of myself.
                 </p>
                 <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
                 <p>
+                    Now in my young 20s, my favorite blogs and media are shaping how I view the world.
+                </p>
+                <p>
                 My favorite blogs:
-                    <li><a href="paulgraham.com"target="_blank">Paul Graham</a> - specifically his writing on <a href="https://paulgraham.com/cities.html"target="_blank">cities</a>. This post kick started my brain on how to describe cities beyong the generic descriptors like food quality + public transporation people usually cite. My take? Choose a city where you feel most like yourself.</li>
-                    <li><a href="https://worksinprogress.co/"target="_blank">Works in Progress</a> - specifically the piece on <a href="https://worksinprogress.co/issue/why-prediction-markets-arent-popular/"target="_blank">prediction markets</a>. This blog opened my eyes to what makes writing truly persuasive. The writers for works in progress are quite good at presenting an argument and addressing counter arguments the moment you begin to think of them.</li>
+                    <li><a href="paulgraham.com"target="_blank">Paul Graham</a> - specifically his writing on <a href="https://paulgraham.com/cities.html"target="_blank">cities</a>. This post kick-started my brain on how to describe cities beyong the generic descriptors like food quality + public transporation people usually cite. </li>
+                    <li><a href="https://worksinprogress.co/"target="_blank">Works in Progress</a> - specifically the piece on <a href="https://worksinprogress.co/issue/why-prediction-markets-arent-popular/"target="_blank">prediction markets</a>. This blog opened my eyes to what makes writing truly persuasive. The writers for works in progress are exceptional at presenting an argument and addressing counter arguments the moment you begin to think of them.</li>
                     <li><a href="https://www.avabear.xyz/about"target="_blank">Ava Bookbear</a> - specifically the piece on <a href="https://www.avabear.xyz/p/the-true-shape-of-a-thing"target="_blank">the true shape of a thing</a>. If something feels good, you can just do it and continue doing it, sharing it with the world and seeing where it takes you. Ava consistently puts the complex into digestible, impactful writing.</li>
                 </p>
                 <p>
@@ -205,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Writing</h2>
                 <p>
-                    I explore the answers to life's biggest questions in my writing. Questions like how we can have it all: a career we care about, friendships, family and love. In between, I like to share writing I think can change their mind about how to live life. I want to improve my persuasive writing, so if you have favorites please send :)
+                    I explore the answers to life's biggest questions in my writing. Questions like how we can have it all: a career we care about, friendships, family and love. I want to improve my persuasive writing, so if you have favorites please send :)
                 </p>
                 <p>
                     I'm in between moving old blog posts to Substack so here's my old Bear Blog and new Substack for your enjoyment.
