@@ -524,7 +524,7 @@ body::after {
         margin-bottom: 12px;
     }
     .feed-content #tech-test {
-        height: 50%;
+        height: 40%;
     }
     #content .feed-content p {
         font-size: 24px;
@@ -686,3 +686,4 @@ body::after {
         width: 100%;
     }
 }
+

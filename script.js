@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="making-content">
                 <h2>Making</h2>
                 <p>
-                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. The image previews on the page are a little buggy, so currently reworking it.
+                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. The image previews on the page are a little buggy because I'm trying to scrape the image previews, so currently reworking it - open to advice. Yes, I could just add images myself, but where's the fun in that?
                 </p>
             </div>
             <div class="project-card-container">
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Consuming</h2>
                 <p>
-                    A work in progress. Learn more about me through my Youtube recommended, my favorite blogs that changed the way I think and media that shaped how I exist in the world.
+                    It's only fitting I include my Youtube recommended that's shaped my taste since I was a little kid watching Ryan Higa + Kev Jumba, my favorite blogs that have shaped my young 20s and the media that's shaped how I view the world.
                 </p>
                 <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
                 <p>
@@ -191,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <iframe
                         src="https://lu.ma/embed/calendar/cal-yDZTDnxoCpg2xwE/events?"
                         width="50%"
-                        height="450"
+                        height="400"
                         frameborder="0"
                         style="border: 1px solid #bfcbda88; border-radius: 8px; min-width:50%"
                         allowfullscreen=""
@@ -199,9 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
                         tabindex="0"
                         >
                     </iframe>
-                    
-                
-                    
             </div>
         `,
         writing: `
