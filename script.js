@@ -8,9 +8,48 @@ document.addEventListener('DOMContentLoaded', function() {
         home: `
             <div class="intro">
                 <p class="steve-intro">Steve Nguyen</p>
-                <p>A <span class="underline">PM</span> who loves to <span class="underline">code</span>.</p>
-                <p>An iPhone <span class="underline">videographer</span>.</p>
-                <p>A <span class="underline">writer</span> who never enjoyed English class.</p>
+                <p>A <span class="underline" data-popup="
+                <div style='padding: 4px'>
+                    <h3>ServiceNow</h3>
+                    <span style='position: absolute; top: 20px; right: 24px; font-size: 10px'>‘23 - ‘24</span>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                        I’m a Technical Program Manager for our Automations team and previously for the AI Search team. <br></br>
+                        I learned how process can be necessary at a large company and how to drive delivery of large scale software.
+                    </p>
+                </div>
+            ">PM</span> who loves to <span class="underline" data-popup="
+                <div style='padding: 4px';>
+                    <h3>Software</h3>
+                    <p style='font-size: 12px; margin-top: 12px; margin-bottom:12px;'>
+                        I like when software intersects with delight, play and silliness. <br></br>
+                        I’m decent with JS frameworks like React + Next.js and by decent I mean I can prompt until something mostly works.
+                    </p>
+                    <a href='https://github.com/stevetng' target='_blank'>Check out my GitHub</a>
+                </div>
+            "
+            ">code</span>.</p>
+                <p>An iPhone <span class="underline" data-popup="
+                <div style='padding: 4px'>
+                    <h3>Videography</h3>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                        I like to document my life in videos so my future kids can see how I was <a href='https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link' target='_blank'>a cool guy</a>.
+                        <br></br>
+                        I also like how unbounded creativity can be in videos so making videos for a purpose like <a href='https://x.com/WoahIsThatSteve/status/1805030499049513338' target='_blank'>marketing's</a> cool too.
+                    </p>
+                </div>
+            ">videographer</span>.</p>
+                <p>A <span class="underline" data-popup="
+                <div style='padding: 4px'>
+                    <h3>Writing</h3>
+                    <p style='font-size: 12px; margin-top: 12px;'>
+                    I like to journal intensely, live life intensely without writing, and then journal intensely again.
+                    <br></br>
+                    When I feel like people can benefit from a unique perspective I have, I write to change their mind.
+                    <br></br>
+                    <a href='https://steviesteve.bearblog.dev/people-dont-need-to-be-in-your-life-forever/' target='_blank'>Recent piece</a> on how people don’t need to be in your life forever.
+                    </p>
+                </div>
+            ">writer</span> who never enjoyed English class.</p>
             </div>
             <p class="intro-web">I'm Steve, a <span class="underline" data-popup="
                 <div style='padding: 4px'>
@@ -79,7 +118,8 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Silly Software</h2>
                 <p>
-                    I believe technology can benefit from more play and whimsy. <a href="https://www.techbropuritytest.com/" target="_blank">This</a> is my latest attempt to add silliness to the world.
+                    We need sillier tech in the world so people remember that tech can be human. 
+                    <a href="https://www.techbropuritytest.com/" target="_blank">This</a> is my latest attempt to add silliness to the world.
                 </p>
                 <div id="tech-test" style="position: relative; overflow: hidden; width: 100%; padding-top: 56.25%;">
                     <iframe 
@@ -95,10 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="making-content">
                 <h2>Making</h2>
                 <p>
-                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. 
-                </p>
-                <p>
-                The image previews on the page are a little buggy because I'm trying to scrape the image previews, but keep running into CORS issues.
+                    I don't know if I love trying new things or if I'm just in my 20's. For the meantime, I love making silly software, blog posts and videos.
                 </p>
             </div>
             <div class="project-card-container">
@@ -128,11 +165,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Consuming</h2>
                 <p>
-                    Youtubers like Ryan Higa and KevJumba shaped my youth, so as a 23 year old, I'm including my Youtube recommended as a reflection of myself.
+                    I grew up trying to model my life on YouTubers like Ryan Higa and KevJumba, so here's my YouTube recommended as a reflection of who I am now.
                 </p>
                 <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
                 <p>
-                    Now in my young 20s, my favorite blogs and media are shaping how I view the world.
+                    These are my favorite blogs and media which I hope will shape how I view the world.
                 </p>
                 <p>
                 My favorite blogs:
@@ -253,8 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
                 // Adjust position for mobile
                 if (window.innerWidth <= 768) {
-                    top = rect.top + window.scrollY - popupRect.height - 10;
-                    left = Math.max(10, Math.min(left, window.innerWidth - popupRect.width - 10));
+                    top = rect.top + window.scrollY + (rect.height / 2) - (popupRect.height / 2);
+                    left = (window.innerWidth - popupRect.width) / 2;
                 } else {
                     // Existing desktop positioning logic
                     if (left + popupRect.width > window.innerWidth) {
