@@ -351,9 +351,6 @@ document.addEventListener('DOMContentLoaded', function() {
         contentArea.innerHTML = pageContent[pageName];
         updateActiveLink(pageName);
         createPopups(); // Create popups after content is loaded
-        links.forEach(link => {
-            fetchLinkPreview(link.url, link.imgId);
-        });
         window.history.pushState({page: pageName}, pageName, `#${pageName}`);
 
         const substackScript = document.createElement('script');
