@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="https://www.instagram.com/amiyoshimura_/" target="_blank">Ami Yoshimura</a> - the king of community building. Thoughtful and dedicated super connector.</li>
                     <li><a href="https://www.rishi.cx/" target="_blank">Rishi Kothari</a> - the best person to stroll around Harvard campus with. Curious, kind and delightful.</li>
                     <li><a href="https://substack.com/@alexanderao" target="_blank">Alex Chueh</a> - meets a new person every single day. Living example of seeking discomfort.</li>
-                    <li><a href="mailto:stevetn123@gmail.com" target="_blank">Maybe you?</a> - if you're someone who lets curiosity + serendipity guide you, reach out, I'd love to hang out.</li>
+                    <li><a href="mailto:stevetn123@gmail.com" target="_blank">Maybe you?</a> - if you're someone who lets curiosity + serendipity guide you, reach out, I'd love to figure out some oddly specific hang out.</li>
                 </ol>
             </div>
          `,
