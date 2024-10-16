@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contentArea = document.getElementById('content');
     const navLinks = document.querySelectorAll('.sidebar nav a');
-    const pages = ['home', 'about', 'silly', 'making', 'consuming', 'sparkly', 'hosting', 'writing', 'video'];
+    const pages = ['home', 'about', 'silly', 'making', 'consuming', 'sparkly', 'hosting', 'writing', 'bonus'];
     
     // Content for each page
     const pageContent = {
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </p>
                 <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
                 <p>
-                    These are my favorite blogs and media which I hope will shape how I view the world.
+                    These are my favorite blogs and media that have shaped how I view the world.
                 </p>
                 <p>
                 My favorite blogs:
@@ -190,7 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Sparkly People</h2>
                 <p>
-                    Sparkly people are the ones who give me energy. The ones where I leave interactions with them saying... wow. These people have been either incredibly consistent with the delight they bring to my life or I've had a high concentration of magic in my limited interactions with them.
+                    Sparkly people are the ones who give me energy. The ones where I leave interactions with them saying... wow. 
+                </p>
+                <p>
+                    These people have been either incredibly consistent with the delight they bring to my life or I've had a high concentration of magic in my limited interactions with them.
                 </p>
                 <ol style="margin-top:0">
                     <li><a href="https://avonarnim.github.io/" target="_blank">Adam Von Arnim</a> - an endless sense of humor + wonder for the world.</li>
@@ -257,19 +260,26 @@ document.addEventListener('DOMContentLoaded', function() {
                     <iframe
                         class="bearblog-post-embed"
                         src="https://steviesteve.bearblog.dev/blog/"
+                        style="border: 1px solid #bfcbda88; border-radius: 4px;"
                         width="50%"
                         height="350">
                     </iframe>
-                    <div id="substack-feed-embed"></div>
+                    <div id="substack-feed-embed" style="border: 1px solid #bfcbda88; border-radius: 4px;"></div>
                 </div>
             </div>
         `,
-        video: `
+        bonus: `
             <div class="feed-content">
-                <h2>Video</h2>
+                <h2>Bonus</h2>
                 <p>
-                    I like to make things like silly software, blog posts exploring the meaning of life and videos that capture what my life was like. The image previews on the page are a little buggy, so currently reworking it.
+                    Welcome to my old site (circa 2023-2024)
                 </p>
+                <iframe 
+                width="100%"
+                height="600"
+                style="border: 1px solid #bfcbda88; border-radius: 4px;"
+                src="https://stevetng.com/">
+            </iframe>
             </div>
         `,
     };
