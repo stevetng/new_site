@@ -453,7 +453,9 @@ body::after {
     }
 
     #about-section-one h2 {
-        font-size: 36px; /* Adjust font size for mid-sized screens */
+        font-size: 36px; /* Adjust font size for mid-sized 
+        screens */
+        margin-top: 0px;
     }
 
     #about-section-one p {
@@ -478,6 +480,7 @@ body::after {
 
     #about-section-one h2 {
         font-size: 28px; /* Adjust font size for mobile */
+        margin-top: 0px;
     }
 
     #about-section-one p {
