@@ -314,36 +314,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 popup.style.top = `${top}px`;
                 popup.style.left = `${left}px`;
             });
-        });
-        el.addEventListener('touchstart', () => {
-            // Trigger the same logic as mouseenter
-            const rect = el.getBoundingClientRect();
-            const popupRect = popup.getBoundingClientRect();
+            el.addEventListener('touchstart', () => {
+                // Trigger the same logic as mouseenter
+                const rect = el.getBoundingClientRect();
+                const popupRect = popup.getBoundingClientRect();
+                
+                let top = rect.bottom + window.scrollY;
+                let left = rect.left + window.scrollX;
             
-            let top = rect.bottom + window.scrollY;
-            let left = rect.left + window.scrollX;
-        
-            // Adjust position for mobile
-            top = rect.top + window.scrollY + (rect.height / 2) - (popupRect.height / 2);
-            left = (window.innerWidth - popupRect.width) / 2;
-        
-            popup.style.top = `${top}px`;
-            popup.style.left = `${left}px`;
-        });
-        el.addEventListener('click', () => {
-            // Trigger the same logic as mouseenter
-            const rect = el.getBoundingClientRect();
-            const popupRect = popup.getBoundingClientRect();
+                // Adjust position for mobile
+                top = rect.top + window.scrollY + (rect.height / 2) - (popupRect.height / 2);
+                left = (window.innerWidth - popupRect.width) / 2;
             
-            let top = rect.bottom + window.scrollY;
-            let left = rect.left + window.scrollX;
-        
-            // Adjust position for mobile
-            top = rect.top + window.scrollY + (rect.height / 2) - (popupRect.height / 2);
-            left = (window.innerWidth - popupRect.width) / 2;
-        
-            popup.style.top = `${top}px`;
-            popup.style.left = `${left}px`;
+                popup.style.top = `${top}px`;
+                popup.style.left = `${left}px`;
+            });
+            el.addEventListener('click', () => {
+                // Trigger the same logic as mouseenter
+                const rect = el.getBoundingClientRect();
+                const popupRect = popup.getBoundingClientRect();
+                
+                let top = rect.bottom + window.scrollY;
+                let left = rect.left + window.scrollX;
+            
+                // Adjust position for mobile
+                top = rect.top + window.scrollY + (rect.height / 2) - (popupRect.height / 2);
+                left = (window.innerWidth - popupRect.width) / 2;
+            
+                popup.style.top = `${top}px`;
+                popup.style.left = `${left}px`;
+            });
         });
     }
 
