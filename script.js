@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href='https://github.com/stevetng' target='_blank'>Check out my GitHub</a>
                 </div>
             "
-            ">code</span>.</p>
+            ">code</span>. (Tap the underlined words!)</p>
                 <p>An iPhone <span class="underline" data-popup="
                 <div style='padding: 4px'>
                     <h3>Videography</h3>
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
             who never enjoyed English class.</p>
             <p id="silly-software">I like making <a href="https://www.techbropuritytest.com/" target="_blank">silly software</a> and <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">marketing videos</a> for startups.</p>
             <p id="home-contact-me"><a href="mailto:stevetn123@gmail.com">Contact me</a> for front-end/marketing work on a contract basis.</p>
-            <div class="location">Currently: Brooklyn, NY</div>
+            <div class="location"><p id="fun-msg" style="font-size:10px; text-align:center">(I left some easter eggs on this page!)</p>Currently: Brooklyn, NY</div>
         `,
         about: `
             <div class="about-section">
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>
                     These people have been either incredibly consistent with the delight they bring to my life or I've had a high concentration of magic in my limited interactions with them.
                 </p>
-                <ol style="margin-top:0">
+                <ul style="margin-top:0">
                     <li><a href="https://avonarnim.github.io/" target="_blank">Adam Von Arnim</a> - an endless sense of humor + wonder for the world.</li>
                     <li><a href="https://mariofigueroa.space" target="_blank">Mario Figueroa</a> - a relentless pursuit of craft + polish. Never met someone with better taste in memes, but also style.</li>
                     <li><a href="https://jwang.work" target="_blank">Jess Wang</a> - a rare combination of wisdom and silliness with a heavy dose of creativity.</li>
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="https://substack.com/@alexanderao" target="_blank">Alex Chueh</a> - meets a new person every single day. Living example of seeking discomfort.</li>
                     <li><a href="https://malted.dev/" target="_blank">Ben Dixon</a> - brings a child-like wonder and delight to every interaction you have with him. </li>
                     <li><a href="mailto:stevetn123@gmail.com" target="_blank">Maybe you?</a> - if you're someone who lets curiosity + serendipity guide you, reach out, I'd love to figure out some oddly specific hang out.</li>
-                </ol>
+                </ul>
             </div>
          `,
         hosting: `
