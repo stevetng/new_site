@@ -103,11 +103,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <h2>You can just do things.</h2>
                     <p>Taking this to heart, here’s a taste of what I’ve done:</p>
                     <br></br>
-                    <p>♟️ I was cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s&pp=ygUQYm90ZXpsaXZlIDUgdnMgMQ%3D%3D" target="_blank">Botez Sisters</a> video for the chance to win $1,000.</p>
+                    <p>♟️ I was cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s&pp=ygUQYm90ZXpsaXZlIDUgdnMgMQ%3D%3D" target="_blank">Botez Sisters</a> video for the chance to win $1,000. I hit a peak rating of 1800 on chess.com by watching a ton of Youtube.</p>
                     <br></br>
                     <p>🥳 I threw a Steve-themed 21st birthday party where 200 people dressed up as a <a href="https://www.instagram.com/p/CdMqGEdlbJr/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" target="_blank">historic Steve</a>.</p>
                     <br></br>
-                    <p>🫂 I DM'd strangers I admired on the internet and started <a href="https://lu.ma/beans" target="_blank">Friendly Beans</a>, a friendly community of tinkerers who meet every Sunday in Cambridge, MA.</p>
+                    <p>🫂 I DM'd strangers I admired on the internet and started <a href="https://lu.ma/beans" target="_blank">Friendly Beans</a>, a friendly community of tinkerers who meet every Sunday in Cambridge, MA.</p> <br></br>
+                    <p>💻 I spent a stupid amount of time making this site a Single Page Application in pure HTML/CSS/JS because I wanted control over every microinteraction. </p>
                 </div>
                 <div id="about-section-two">
                     <img src="polaroid.png" alt="Description of image" />
