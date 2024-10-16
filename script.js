@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         about: `
             <div class="about-section">
                 <div id="about-section-one">
-                    <h2>“You can just do things.”</h2>
+                    <h2>You can just do things.</h2>
                     <p>Taking this to heart, here’s a taste of what I’ve done:</p>
                     <br></br>
                     <p>♟️ I was cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s&pp=ygUQYm90ZXpsaXZlIDUgdnMgMQ%3D%3D" target="_blank">Botez Sisters</a> video for the chance to win $1,000.</p>
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Bonus</h2>
                 <p>
-                    Welcome to my old site (circa 2023-2024)
+                    Welcome to my old site (circa 2023)
                 </p>
                 <iframe 
                 width="100%"

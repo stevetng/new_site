@@ -415,7 +415,8 @@ body::after {
 
 #about-section-one h2 {
     font-size: 40px;
-    font-weight: normal;
+    font-weight: 500;
+    margin-top: 12px;
 }
 
 #about-section-one p {
