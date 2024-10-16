@@ -140,22 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
             <div class="project-card-container">
                 <a href="https://github.com/stevetng/sports_narrator" class="project-card" target="_blank">
-                    <img id="preview1" src="" alt="Preview Image" width="100%">
+                    <img id="preview1" src="sports.png" alt="Preview Image" width="100%">
                     <h2>News, but make it sports.</h2>
                     <p> I used the EXA and Open AI APIs to fetch and then summarize the latest political news in the tone of a sports broadcaster.</p>
                 </a>
                 <a href="https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link" class="project-card" target="_blank">
-                    <img id="preview2" src="" alt="Preview Image" width="100%">
+                    <img id="preview2" src="walk.jpg" alt="Preview Image" width="100%">
                     <h2>A Walk to Class</h2>
                     <p>A video I worked on with my friend from USC, William Higbie exploring how we can capture the serendipity of a walk to class.</p>
                 </a>
                 <a href="https://github.com/stevetng/web-crawler" class="project-card" target="_blank">
-                    <img id="preview3" src="" alt="Preview Image" width="100%">
+                    <img id="preview3" src="web_crawler.png" alt="Preview Image" width="100%">
                     <h2>Web Crawling Visualization</h2>
                     <p>Inspired by how Google uses web crawlers to index trillions of URLs, I built a website crawler that takes in a URL and creates a graph of URLs mentioned on the site.</p>
                 </a>
                 <a href="https://www.techbropuritytest.com/" class="project-card" target="_blank">
-                    <img id="preview4" src="" alt="Preview Image" width="100%">
+                    <img id="preview4" src="tech_bro 1.png" alt="Preview Image" width="100%">
                     <h2>Tech Bro Purity Test</h2>
                     <p>Inspired by some VERY stereotypical experiences with tech bros, I decided to make this. (My score's 67)</p>
                 </a>
@@ -395,60 +395,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // adding link previews for the making page
     
-    const links = [
-        {
-            url: 'https://github.com/stevetng/sports_narrator',
-            imgId: 'preview1'
-        },
-        {
-            url: 'https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link',
-            imgId: 'preview2'
-        },
-        {
-            url: 'https://github.com/stevetng/web-crawler',
-            imgId: 'preview3'
-        },
-        {
-            url: 'https://www.techbropuritytest.com/',
-            imgId: 'preview4'
-        }
-    ];
+    // const links = [
+    //     {
+    //         url: 'https://github.com/stevetng/sports_narrator',
+    //         imgId: 'preview1'
+    //     },
+    //     {
+    //         url: 'https://www.instagram.com/reel/Cu4rNy0A6U0/?utm_source=ig_web_copy_link',
+    //         imgId: 'preview2'
+    //     },
+    //     {
+    //         url: 'https://github.com/stevetng/web-crawler',
+    //         imgId: 'preview3'
+    //     },
+    //     {
+    //         url: 'https://www.techbropuritytest.com/',
+    //         imgId: 'preview4'
+    //     }
+    // ];
 
-    async function fetchLinkPreview(url, imgId) {
-            try {
-                const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
-                const data = await response.json();
+    // async function fetchLinkPreview(url, imgId) {
+    //         try {
+    //             const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(url)}`);
+    //             const data = await response.json();
 
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(data.contents, 'text/html');
-                const ogImage = doc.querySelector('meta[property="og:image"]');
-                const imageUrl = ogImage ? ogImage.content : '';
+    //             const parser = new DOMParser();
+    //             const doc = parser.parseFromString(data.contents, 'text/html');
+    //             const ogImage = doc.querySelector('meta[property="og:image"]');
+    //             const imageUrl = ogImage ? ogImage.content : '';
 
-                const img = document.getElementById(imgId);
-                if (img) { // Check if the image element exists
-                    if (imageUrl) {
-                        img.src = imageUrl;
-                    } else {
-                        img.src = 'oopsies.png'; // Set your placeholder image path here
-                        img.alt = 'No preview image found';
-                    }
-                } else {
-                    console.warn(`Image element with ID ${imgId} not found.`);
-                }
-            } catch (error) {
-                console.error(`Error fetching preview for ${url}:`, error);
-                const img = document.getElementById(imgId);
-                if (img) { // Check if the image element exists
-                    img.src = 'oopsies.png'; // Set your placeholder image path here
-                    img.alt = 'Failed to load preview';
-                }
-            }
-        }
+    //             const img = document.getElementById(imgId);
+    //             if (img) { // Check if the image element exists
+    //                 if (imageUrl) {
+    //                     img.src = imageUrl;
+    //                 } else {
+    //                     img.src = 'oopsies.png'; // Set your placeholder image path here
+    //                     img.alt = 'No preview image found';
+    //                 }
+    //             } else {
+    //                 console.warn(`Image element with ID ${imgId} not found.`);
+    //             }
+    //         } catch (error) {
+    //             console.error(`Error fetching preview for ${url}:`, error);
+    //             const img = document.getElementById(imgId);
+    //             if (img) { // Check if the image element exists
+    //                 img.src = 'oopsies.png'; // Set your placeholder image path here
+    //                 img.alt = 'Failed to load preview';
+    //             }
+    //         }
+    //     }
 
-        // Loop through each link and fetch its preview
-        links.forEach(link => {
-            fetchLinkPreview(link.url, link.imgId);
-        });
+    //     // Loop through each link and fetch its preview
+    //     links.forEach(link => {
+    //         fetchLinkPreview(link.url, link.imgId);
+    //     });
 
     // Initial page load
     const initialPage = window.location.hash.slice(1) || 'home';
