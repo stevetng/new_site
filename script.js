@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const contentArea = document.getElementById('content');
     const navLinks = document.querySelectorAll('.sidebar nav a');
-    const pages = ['home', 'about', 'silly', 'making', 'consuming', 'sparkly', 'hosting', 'writing', 'bonus'];
+    const pages = ['home', 'about', 'writing', 'making', 'consuming', 'sparkly', 'hosting', 'silly', 'bonus'];
     
     // Content for each page
     const pageContent = {
