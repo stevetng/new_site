@@ -253,18 +253,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p>
                     I explore the answers to life's biggest questions in my writing. Questions like how we can have it all: a career we care about, friendships, family and love. I want to improve my persuasive writing, so if you have favorites please send :)
                 </p>
-                <p>
-                    I'm in between moving old blog posts to Substack so here's my old Bear Blog and new Substack for your enjoyment.
-                </p>
                 <div id="writing-container">
-                    <iframe
-                        class="bearblog-post-embed"
-                        src="https://steviesteve.bearblog.dev/blog/"
-                        style="border: 1px solid #bfcbda88; border-radius: 4px;"
-                        width="50%"
-                        height="350">
-                    </iframe>
-                    <div id="substack-feed-embed" style="border: 1px solid #bfcbda88; border-radius: 4px;"></div>
+                    <div id="substack-feed-embed"></div>
                 </div>
             </div>
         `,
