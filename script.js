@@ -166,10 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="feed-content">
                 <h2>Consuming</h2>
                 <p>
-                    I grew up trying to model my life on YouTubers like Ryan Higa and KevJumba, so here's my YouTube recommended as a reflection of who I am now.
-                </p>
-                <img src="yt_rec.png" width="100%" style="margin-bottom: 8px">
-                <p>
                     These are my favorite blogs and media that have shaped how I view the world.
                 </p>
                 <p>
@@ -185,6 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="https://www.imdb.com/title/tt2194499/"target="_blank">About Time</a> - About Time is like a warm hug that will comfort you at all the different phases of life. Love is not about being perfect. Stop living life like you wanted a second chance at everyday. Take whatever life throws at you and face it with grace. </li>
                     <li><a href="https://www.amazon.com/When-Breath-Becomes-Paul-Kalanithi/dp/081298840X"target="_blank">When Breath Becomes Air - Paul Kalanithi</a> - There’s no one better to talk about life than those who are closest to death. This book conviced me that I can pursue a "higher calling" while not getting lost that pursuit. That I can also find meaning in the mundane. </li>
                     <li><a href="https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0061122416"target="_blank">The Alchemist - Paulo Coelho</a> - When you vocalize your goals + dreams into the world, the whole world conspires to help you get there. If love is meant to be, letting go will not mean it's gone.</li>
+                    <li><a href="https://www.amazon.com/Educated-Memoir-Tara-Westover/dp/0399590501"target="_blank">Educated - Tara Westover</a> - I've never felt closer to understanding why my immigrant parents so badly wished for me to go to college than after reading this book. Exceptional storytelling, the first time in a long time I read 100+ pages in one session. </li>
                 </p>
             </div>
         `,
