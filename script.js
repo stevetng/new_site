@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <br></br>
                     When I feel like people can benefit from a unique perspective I have, I write to change their mind.
                     <br></br>
-                    <a href='https://steviesteve.bearblog.dev/people-dont-need-to-be-in-your-life-forever/' target='_blank'>Recent piece</a> on how people don’t need to be in your life forever.
+                    <a href='https://steviesteveee.substack.com/p/are-these-my-people' target='_blank'>Recent piece</a> on how to find the right people for you.
                     </p>
                 </div>
             ">writer</span> who never enjoyed English class.</p>
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <br></br>
                     When I feel like people can benefit from a unique perspective I have, I write to change their mind.
                     <br></br>
-                    <a href='https://steviesteve.bearblog.dev/people-dont-need-to-be-in-your-life-forever/' target='_blank'>Recent piece</a> on how people don’t need to be in your life forever.
+                    <a href='https://steviesteveee.substack.com/p/are-these-my-people' target='_blank'>Recent piece</a> on how to find the right people for you.
                     </p>
                 </div>
             ">writer</span> 
