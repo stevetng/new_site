@@ -258,6 +258,235 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             </div>
         `,
+        portfolio: `
+            <div class="portfolio">
+                <div class="portfolio-hero">
+                    <h2>I'm <span class="hero-accent">Steve</span>, currently operations @ServiceNow</h2>
+                    <p class="portfolio-location">📍 Based in New York</p>
+                    <p class="portfolio-subtitle">Software enthusiast. Poker player. Community Host. Video game enthusiast.</p>
+                    <ul class="portfolio-intro-list">
+                        <li><span>Top 1% TFT player worldwide</span></li>
+                        <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
+                        <li><span>Made a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone — 50K+ views</span></li>
+                        <li><span>$10K+ from live low stakes poker</span></li>
+                        <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
+                        <li><span>Created <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels</a> and short films</span></li>
+                    </ul>
+                </div>
+
+                <div class="portfolio-filters">
+                    <a href="#" class="portfolio-filter active-filter" data-filter="all">All</a>
+                    <a href="#" class="portfolio-filter" data-filter="software">Software</a>
+                    <a href="#" class="portfolio-filter" data-filter="community">Community</a>
+                    <a href="https://steviesteveee.substack.com/" target="_blank">Writing ↗</a>
+                    <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">Videos ↗</a>
+                </div>
+
+                <div class="portfolio-feed">
+                    <a href="https://x.com/WoahIsThatSteve/status/1988292171901137091" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">prediction-market-dashboard-pi.vercel.app</span></div>
+                            <img src="preview_kalshi.png" alt="Prediction Market Terminal" class="portfolio-card-img" />
+                            <span class="portfolio-card-badge">Featured on Twitter</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>Prediction Market Trading Terminal</h3>
+                            <p>A Kalshi trading dashboard that sparked conversations on Twitter about the future of prediction markets.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">TypeScript</span>
+                                <span class="portfolio-tag">Tailwind CSS</span>
+                                <span class="portfolio-tag">Radix UI</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/stevetng/poker_bankroll" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">localhost:5173</span></div>
+                            <img src="poker_preview.png" alt="Poker Bankroll Tracker" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>Poker Bankroll Tracker</h3>
+                            <p>Track poker sessions, visualize bankroll trends, and analyze performance over time.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">Vite</span>
+                                <span class="portfolio-tag">Recharts</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://koala-sheet.vercel.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">koala-sheet.vercel.app</span></div>
+                            <img src="preview_koalasheet.png" alt="KoalaSheet" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>KoalaSheet</h3>
+                            <p>Convert PDFs and Excel worksheets into any format you need.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">Tailwind CSS</span>
+                                <span class="portfolio-tag">Radix UI</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/stevetng" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="portfolio-card-preview" style="background: linear-gradient(135deg, #f7971e, #ffd200);">
+                                <div class="preview-browser-bar">
+                                    <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+                                    <span class="preview-url">cron: 0 9 * * 1-5</span>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-code-lines">
+                                        <div class="preview-code-line" style="width: 75%; background: rgba(0,0,0,0.2)"></div>
+                                        <div class="preview-code-line" style="width: 50%; background: rgba(0,0,0,0.15)"></div>
+                                        <div class="preview-code-line" style="width: 85%; background: rgba(0,0,0,0.2)"></div>
+                                        <div class="preview-code-line" style="width: 40%; background: rgba(0,0,0,0.1)"></div>
+                                    </div>
+                                    <span class="preview-icon">📊</span>
+                                </div>
+                            </div>
+                            <span class="portfolio-card-badge">Automated</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>Stock Signals Screener</h3>
+                            <p>Automated stock screener with RSI, moving averages, and email alerts on a cron schedule.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Python</span>
+                                <span class="portfolio-tag">yfinance</span>
+                                <span class="portfolio-tag">pandas</span>
+                                <span class="portfolio-tag">Cron</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.techbropuritytest.com/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">techbropuritytest.com</span></div>
+                            <img src="preview_techbro.png" alt="Tech Bro Purity Test" class="portfolio-card-img" />
+                            <span class="portfolio-card-badge">Viral</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024</div>
+                            <h3>Tech Bro Purity Test</h3>
+                            <p>A silly quiz that went viral — 200K+ views, 50K+ users. How much of a tech bro are you?</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">HTML</span>
+                                <span class="portfolio-tag">CSS</span>
+                                <span class="portfolio-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://hater-jet.vercel.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">hater-jet.vercel.app</span></div>
+                            <img src="preview_hater.png" alt="Daily Hater" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024</div>
+                            <h3>Hater</h3>
+                            <p>Full-stack social app deployed on Google Cloud Run and Vercel with auth and user profiles.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">MongoDB</span>
+                                <span class="portfolio-tag">Express</span>
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">Docker</span>
+                                <span class="portfolio-tag">GCP</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://github.com/stevetng/sports_narrator" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="portfolio-card-preview" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                                <div class="preview-browser-bar">
+                                    <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+                                    <span class="preview-url">sports-narrator.py</span>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-code-lines">
+                                        <div class="preview-code-line" style="width: 65%"></div>
+                                        <div class="preview-code-line" style="width: 40%"></div>
+                                        <div class="preview-code-line" style="width: 80%"></div>
+                                    </div>
+                                    <span class="preview-icon">🏈</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024</div>
+                            <h3>News, but make it sports</h3>
+                            <p>Fetches and summarizes political news in the tone of a sports broadcaster using EXA + OpenAI APIs.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Python</span>
+                                <span class="portfolio-tag">OpenAI API</span>
+                                <span class="portfolio-tag">EXA API</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.stevee.me/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">stevee.me</span></div>
+                            <img src="preview_personalsite.png" alt="stevee.me" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024</div>
+                            <h3>Personal Site</h3>
+                            <p>Hand-built SPA in pure HTML/CSS/JS with custom microinteractions, keyboard navigation, and easter eggs.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">HTML</span>
+                                <span class="portfolio-tag">CSS</span>
+                                <span class="portfolio-tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://web-production-a8de0.up.railway.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">web-production-a8de0.up.railway.app</span></div>
+                            <img src="flashcard_preview.png" alt="AI Flashcard Generator" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024</div>
+                            <h3>AI Flashcard Generator</h3>
+                            <p>Generate study flashcards from PowerPoint presentations using Claude AI.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Python</span>
+                                <span class="portfolio-tag">Flask</span>
+                                <span class="portfolio-tag">Claude API</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="portfolio-card portfolio-community-card" data-type="community">
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2024 — 2025</div>
+                            <h3>🫘 <a href="https://lu.ma/beans" target="_blank">Friendly Beans</a></h3>
+                            <p>A weekly community of tinkerers in Cambridge, MA spun off of Socratica. Hosted weekly from 2024-2025.</p>
+                            <span class="stat-highlight">Weekly</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-card portfolio-community-card" data-type="community">
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2023 — 2024</div>
+                            <h3>🍵 Tea Haus NYC</h3>
+                            <p>Co-hosted a recurring community event in New York for half a year. Built sponsor relationships and grew a real community.</p>
+                            <span class="stat-highlight">1,000+ attendees</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-cta">
+                    <h3>Let's talk</h3>
+                    <div class="portfolio-cta-links">
+                        <a href="mailto:stevetn123@gmail.com">Email me</a>
+                        <a href="https://x.com/WoahIsThatSteve" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        `,
         bonus: `
             <div class="feed-content">
                 <h2>Bonus</h2>
@@ -336,10 +565,114 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    function initPortfolio() {
+        // Add dark mode class and hide sidebar
+        contentArea.classList.add('portfolio-mode');
+        document.querySelector('.container').classList.add('portfolio-active');
+
+        // Cursor glow follower
+        const glow = document.createElement('div');
+        glow.className = 'portfolio-glow';
+        contentArea.appendChild(glow);
+        contentArea.addEventListener('mousemove', (e) => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+
+        // GSAP animations
+        if (typeof gsap !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+            const scroller = contentArea;
+
+            // Hero entrance
+            gsap.from('.portfolio-hero h2', {
+                y: 40, opacity: 0, duration: 0.8,
+                ease: 'power3.out'
+            });
+            gsap.from('.portfolio-stats .portfolio-stat', {
+                y: 30, opacity: 0, duration: 0.6,
+                stagger: 0.1, ease: 'power3.out', delay: 0.3
+            });
+            gsap.from('.portfolio-filters', {
+                y: 20, opacity: 0, duration: 0.5,
+                ease: 'power3.out', delay: 0.5
+            });
+
+            // Stagger feed cards
+            const feedCards = document.querySelectorAll('.portfolio-feed .portfolio-card');
+            if (feedCards.length) {
+                gsap.fromTo(feedCards,
+                    { opacity: 0 },
+                    {
+                        opacity: 1, duration: 0.4,
+                        stagger: 0.06, ease: 'power2.out', delay: 0.4,
+                        clearProps: 'all'
+                    }
+                );
+            }
+
+            // CTA
+            gsap.from('.portfolio-cta', {
+                scrollTrigger: {
+                    trigger: '.portfolio-cta',
+                    scroller: scroller,
+                    start: 'top 90%',
+                    toggleActions: 'play none none none'
+                },
+                y: 30, opacity: 0, duration: 0.6,
+                ease: 'power3.out'
+            });
+        }
+
+        // Filter buttons
+        document.querySelectorAll('.portfolio-filter').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const filter = btn.getAttribute('data-filter');
+                document.querySelectorAll('.portfolio-filter').forEach(b => b.classList.remove('active-filter'));
+                btn.classList.add('active-filter');
+                document.querySelectorAll('.portfolio-feed .portfolio-card').forEach(card => {
+                    const type = card.getAttribute('data-type');
+                    if (filter === 'all' || type === filter) {
+                        card.style.display = '';
+                        gsap.fromTo(card, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power2.out' });
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 3D tilt on cards
+        document.querySelectorAll('.portfolio-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                card.style.transform = `perspective(800px) rotateX(${-y * 6}deg) rotateY(${x * 6}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+            });
+        });
+    }
+
+    function cleanupPortfolio() {
+        contentArea.classList.remove('portfolio-mode');
+        document.querySelector('.container').classList.remove('portfolio-active');
+        const glow = contentArea.querySelector('.portfolio-glow');
+        if (glow) glow.remove();
+        if (typeof ScrollTrigger !== 'undefined') {
+            ScrollTrigger.getAll().forEach(t => t.kill());
+        }
+    }
+
     function navigateToPage(pageName) {
+        cleanupPortfolio();
         contentArea.innerHTML = pageContent[pageName];
         updateActiveLink(pageName);
         createPopups(); // Create popups after content is loaded
+        if (pageName === 'portfolio') initPortfolio();
         window.history.pushState({page: pageName}, pageName, `#${pageName}`);
 
         const substackScript = document.createElement('script');
@@ -350,7 +683,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateActiveLink(pageName) {
         navLinks.forEach(link => link.classList.remove('active'));
-        document.querySelector(`[data-page="${pageName}"]`).classList.add('active');
+        const activeLink = document.querySelector(`[data-page="${pageName}"]`);
+        if (activeLink) activeLink.classList.add('active');
     }
 
     // Handle click navigation
