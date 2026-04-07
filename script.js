@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="portfolio-intro-list">
                         <li><span>Top 1% TFT player worldwide</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
-                        <li><span>Made a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone — 50K+ views</span></li>
+                        <li><span>Made a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone — 60K+ views</span></li>
                         <li><span>$10K+ from live low stakes poker</span></li>
                         <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
                         <li><span>Created <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels</a> and short films</span></li>
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </a>
-                    <a href="https://x.com/WoahIsThatSteve/status/1988292171901137091" target="_blank" class="portfolio-card" data-type="software">
+                    <a href="https://prediction-market-dashboard-pi.vercel.app/" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
                             <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">prediction-market-dashboard-pi.vercel.app</span></div>
                             <img src="preview_kalshi.png" alt="Prediction Market Terminal" class="portfolio-card-img" />
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.techbropuritytest.com/" target="_blank" class="portfolio-card" data-type="software">
+                    <a href="/techbro/" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
                             <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">techbropuritytest.com</span></div>
                             <img src="preview_techbro.png" alt="Tech Bro Purity Test" class="portfolio-card-img" />

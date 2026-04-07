@@ -872,6 +872,14 @@ body::after {
     gap: 6px;
     margin-bottom: 40px;
     padding-bottom: 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.portfolio-filters::-webkit-scrollbar {
+    display: none;
 }
 
 #content.portfolio-mode .portfolio-filters a {
@@ -884,6 +892,8 @@ body::after {
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: all 0.25s ease;
     letter-spacing: 0.5px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 #content.portfolio-mode .portfolio-filters a:hover {
@@ -894,8 +904,8 @@ body::after {
 
 #content.portfolio-mode .portfolio-filters a.active-filter {
     color: #fff;
-    background: rgba(167, 139, 250, 0.15);
-    border-color: rgba(167, 139, 250, 0.4);
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
     font-weight: 500;
 }
 
