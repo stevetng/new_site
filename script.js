@@ -283,54 +283,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
 
                 <div class="portfolio-feed">
-                    <a href="https://x.com/WoahIsThatSteve/status/1988292171901137091" target="_blank" class="portfolio-card" data-type="software">
-                        <div class="portfolio-card-image">
-                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">prediction-market-dashboard-pi.vercel.app</span></div>
-                            <img src="preview_kalshi.png" alt="Prediction Market Terminal" class="portfolio-card-img" />
-                            <span class="portfolio-card-badge">Featured on Twitter</span>
-                        </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2025</div>
-                            <h3>Prediction Market Trading Terminal</h3>
-                            <p>A Kalshi trading dashboard that sparked conversations on Twitter about the future of prediction markets.</p>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Next.js</span>
-                                <span class="portfolio-tag">TypeScript</span>
-                                <span class="portfolio-tag">Tailwind CSS</span>
-                                <span class="portfolio-tag">Radix UI</span>
-                            </div>
-                        </div>
-                    </a>
                     <a href="https://github.com/stevetng/poker_bankroll" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
                             <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">localhost:5173</span></div>
                             <img src="poker_preview.png" alt="Poker Bankroll Tracker" class="portfolio-card-img" />
                         </div>
                         <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2025</div>
+                            <div class="portfolio-card-date">2026</div>
                             <h3>Poker Bankroll Tracker</h3>
                             <p>Track poker sessions, visualize bankroll trends, and analyze performance over time.</p>
                             <div class="portfolio-tags">
                                 <span class="portfolio-tag">React</span>
                                 <span class="portfolio-tag">Vite</span>
                                 <span class="portfolio-tag">Recharts</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://koala-sheet.vercel.app/" target="_blank" class="portfolio-card" data-type="software">
-                        <div class="portfolio-card-image">
-                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">koala-sheet.vercel.app</span></div>
-                            <img src="preview_koalasheet.png" alt="KoalaSheet" class="portfolio-card-img" />
-                        </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2025</div>
-                            <h3>KoalaSheet</h3>
-                            <p>Convert PDFs and Excel worksheets into any format you need.</p>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Next.js</span>
-                                <span class="portfolio-tag">React</span>
-                                <span class="portfolio-tag">Tailwind CSS</span>
-                                <span class="portfolio-tag">Radix UI</span>
                             </div>
                         </div>
                     </a>
@@ -354,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <span class="portfolio-card-badge">Automated</span>
                         </div>
                         <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2025</div>
+                            <div class="portfolio-card-date">2026</div>
                             <h3>Stock Signals Screener</h3>
                             <p>Automated stock screener with RSI, moving averages, and email alerts on a cron schedule.</p>
                             <div class="portfolio-tags">
@@ -362,6 +327,57 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <span class="portfolio-tag">yfinance</span>
                                 <span class="portfolio-tag">pandas</span>
                                 <span class="portfolio-tag">Cron</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://web-production-a8de0.up.railway.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">web-production-a8de0.up.railway.app</span></div>
+                            <img src="flashcard_preview.png" alt="AI Flashcard Generator" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2026</div>
+                            <h3>AI Flashcard Generator</h3>
+                            <p>Generate study flashcards from PowerPoint presentations using Claude AI.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Python</span>
+                                <span class="portfolio-tag">Flask</span>
+                                <span class="portfolio-tag">Claude API</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://x.com/WoahIsThatSteve/status/1988292171901137091" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">prediction-market-dashboard-pi.vercel.app</span></div>
+                            <img src="preview_kalshi.png" alt="Prediction Market Terminal" class="portfolio-card-img" />
+                            <span class="portfolio-card-badge">Featured on Twitter</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>Prediction Market Trading Terminal</h3>
+                            <p>A Kalshi trading dashboard that sparked conversations on Twitter about the future of prediction markets.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">TypeScript</span>
+                                <span class="portfolio-tag">Tailwind CSS</span>
+                                <span class="portfolio-tag">Radix UI</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://koala-sheet.vercel.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">koala-sheet.vercel.app</span></div>
+                            <img src="preview_koalasheet.png" alt="KoalaSheet" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2025</div>
+                            <h3>KoalaSheet</h3>
+                            <p>Convert PDFs and Excel worksheets into any format you need.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">React</span>
+                                <span class="portfolio-tag">Tailwind CSS</span>
+                                <span class="portfolio-tag">Radix UI</span>
                             </div>
                         </div>
                     </a>
@@ -444,22 +460,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </a>
-                    <a href="https://web-production-a8de0.up.railway.app/" target="_blank" class="portfolio-card" data-type="software">
-                        <div class="portfolio-card-image">
-                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">web-production-a8de0.up.railway.app</span></div>
-                            <img src="flashcard_preview.png" alt="AI Flashcard Generator" class="portfolio-card-img" />
-                        </div>
-                        <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2024</div>
-                            <h3>AI Flashcard Generator</h3>
-                            <p>Generate study flashcards from PowerPoint presentations using Claude AI.</p>
-                            <div class="portfolio-tags">
-                                <span class="portfolio-tag">Python</span>
-                                <span class="portfolio-tag">Flask</span>
-                                <span class="portfolio-tag">Claude API</span>
-                            </div>
-                        </div>
-                    </a>
                     <div class="portfolio-card portfolio-community-card" data-type="community">
                         <div class="portfolio-card-body">
                             <div class="portfolio-card-date">2024 — 2025</div>
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="portfolio-card portfolio-community-card" data-type="community">
                         <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2023 — 2024</div>
+                            <div class="portfolio-card-date">2024 — 2025</div>
                             <h3>🍵 Tea Haus NYC</h3>
                             <p>Co-hosted a recurring community event in New York for half a year. Built sponsor relationships and grew a real community.</p>
                             <span class="stat-highlight">1,000+ attendees</span>
