@@ -265,7 +265,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p class="portfolio-location">📍 Based in New York</p>
                     <p class="portfolio-subtitle">Software enthusiast. Poker player. Community Host. Video game enthusiast.</p>
                     <ul class="portfolio-intro-list">
-                        <li><span>Top 1% TFT player worldwide</span></li>
+                        <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
                         <li><span>Made a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone — 60K+ views</span></li>
                         <li><span>$10K+ from live low stakes poker</span></li>
