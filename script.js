@@ -1128,10 +1128,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         },
         hire: {
-            desc: 'contract work pitch',
+            desc: 'what I\'m looking for',
             run() {
-                termPrint('available for <span class="accent">front-end</span> + <span class="accent">marketing video</span> work on a contract basis.');
-                termPrint('→ <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+                termPrint('currently exploring full-time roles in:');
+                termPrint('  <span class="accent">→ front-end software engineering</span>');
+                termPrint('  <span class="accent">→ operations</span> <span class="muted">(with a focus on automation)</span>');
+                termPrint('&nbsp;');
+                termPrint('reach out → <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
             }
         },
         contact: {
