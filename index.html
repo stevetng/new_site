@@ -16,23 +16,55 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <button id="cc-terminal-btn" class="cc-terminal-btn" aria-label="Open terminal" aria-expanded="false" aria-controls="cc-terminal">
+        <span class="cc-terminal-btn-prompt">▸</span>
+        <span class="cc-terminal-btn-label">terminal</span>
+        <span class="cc-terminal-btn-shortcut">⌘K</span>
+    </button>
+    <div id="cc-terminal" class="cc-terminal" role="dialog" aria-modal="false" aria-label="Steve's terminal" hidden>
+        <div class="cc-terminal-header">
+            <span class="cc-terminal-dot cc-terminal-dot-close"></span>
+            <span class="cc-terminal-dot cc-terminal-dot-min"></span>
+            <span class="cc-terminal-dot cc-terminal-dot-max"></span>
+            <span class="cc-terminal-title">steve@stevee.me — /</span>
+            <button class="cc-terminal-close" aria-label="Close terminal">esc</button>
+        </div>
+        <div id="cc-terminal-body" class="cc-terminal-body" role="log" aria-live="polite"></div>
+        <form id="cc-terminal-form" class="cc-terminal-input-wrap" autocomplete="off">
+            <span class="cc-terminal-prompt">▸</span>
+            <input
+                id="cc-terminal-input"
+                class="cc-terminal-input"
+                type="text"
+                spellcheck="false"
+                autocapitalize="off"
+                autocorrect="off"
+                placeholder="Try /help"
+                aria-label="Terminal input"
+            />
+        </form>
+    </div>
     <div class="container">
         <aside class="sidebar desktop-nav">
             <h1>Steve Nguyen</h1>
             <nav>
                 <ul>
+                    <li class="back-to-main"><a href="#" data-page="portfolio"><span class="icon">←</span><span class="hide-on-mobile"> Back to main site</span></a></li>
+                    <div class="legacy-banner">
+                        <p>You're on the <strong>legacy site</strong> — my old digital garden.</p>
+                    </div>
                     <div class="keyboard-shortcut-card">
                         <p>Use keyboard shortcut 1 → 9 to navigate between pages</p>
                     </div>
-                    <li><a href="#home" data-page="home"><span class="icon">🏠</span><span class="hide-on-mobile"> Home</span> <span class="number">1</span></a></li>
-                    <li><a href="#about" data-page="about"><span class="icon">👤</span><span class="hide-on-mobile"> About</span> <span class="number">2</span></a></li>
-                    <li><a href="#writing" data-page="writing"><span class="icon">🖊️</span><span class="hide-on-mobile"> Writing</span> <span class="number">3</span></a></li>
-                    <li><a href="#making" data-page="making"><span class="icon">🛠</span><span class="hide-on-mobile"> Making</span> <span class="number">4</span></a></li>
-                    <li><a href="#consuming" data-page="consuming"><span class="icon">📚</span><span class="hide-on-mobile"> Consuming</span> <span class="number">5</span></a></li>
-                    <li><a href="#sparkly" data-page="sparkly"><span class="icon">🌟</span><span class="hide-on-mobile"> Sparkly people</span> <span class="number">6</span></a></li>
-                    <li><a href="#hosting" data-page="hosting"><span class="icon">🎨</span><span class="hide-on-mobile"> Hosting</span> <span class="number">7</span></a></li>
-                    <li><a href="#silly" data-page="silly"><span class="icon">📍</span><span class="hide-on-mobile"> Silly software</span><span class="number">8</span></a></li>
-                    <li><a href="#bonus" data-page="bonus"><span class="icon">🥳</span><span class="hide-on-mobile"> Bonus</span> <span class="number">9</span></a></li>
+                    <li><a href="#legacy/home" data-page="home"><span class="icon">🏠</span><span class="hide-on-mobile"> Home</span> <span class="number">1</span></a></li>
+                    <li><a href="#legacy/about" data-page="about"><span class="icon">👤</span><span class="hide-on-mobile"> About</span> <span class="number">2</span></a></li>
+                    <li><a href="#legacy/writing" data-page="writing"><span class="icon">🖊️</span><span class="hide-on-mobile"> Writing</span> <span class="number">3</span></a></li>
+                    <li><a href="#legacy/making" data-page="making"><span class="icon">🛠</span><span class="hide-on-mobile"> Making</span> <span class="number">4</span></a></li>
+                    <li><a href="#legacy/consuming" data-page="consuming"><span class="icon">📚</span><span class="hide-on-mobile"> Consuming</span> <span class="number">5</span></a></li>
+                    <li><a href="#legacy/sparkly" data-page="sparkly"><span class="icon">🌟</span><span class="hide-on-mobile"> Sparkly people</span> <span class="number">6</span></a></li>
+                    <li><a href="#legacy/hosting" data-page="hosting"><span class="icon">🎨</span><span class="hide-on-mobile"> Hosting</span> <span class="number">7</span></a></li>
+                    <li><a href="#legacy/silly" data-page="silly"><span class="icon">📍</span><span class="hide-on-mobile"> Silly software</span><span class="number">8</span></a></li>
+                    <li><a href="#legacy/bonus" data-page="bonus"><span class="icon">🥳</span><span class="hide-on-mobile"> Bonus</span> <span class="number">9</span></a></li>
                 <div class="keyboard-shortcut-card">
                     <p>Contact Me</p>
                 </div>

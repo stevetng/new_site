@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <div class="portfolio-hero">
                     <h2>I'm <span class="hero-accent">Steve</span>, currently operations @ServiceNow</h2>
                     <p class="portfolio-location">📍 Based in New York</p>
-                    <p class="portfolio-subtitle">Software enthusiast. Poker player. Community Host. Video game enthusiast.</p>
+                    <p class="portfolio-subtitle">Software enthusiast. Poker player. Community Host. Video game player™.</p>
                     <ul class="portfolio-intro-list">
                         <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
@@ -470,7 +470,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="portfolio-card portfolio-community-card" data-type="community">
                         <div class="portfolio-card-body">
-                            <div class="portfolio-card-date">2024 — 2025</div>
+                            <div class="portfolio-card-date">2025 — 2026</div>
                             <h3>🍵 Tea Haus NYC</h3>
                             <p>Co-hosted a recurring community event in New York for half a year. Built sponsor relationships and grew a real community.</p>
                             <span class="stat-highlight">1,000+ attendees</span>
@@ -569,6 +569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Add dark mode class and hide sidebar
         contentArea.classList.add('portfolio-mode');
         document.querySelector('.container').classList.add('portfolio-active');
+        document.body.classList.add('cc-portfolio-active');
 
         // Cursor glow follower
         const glow = document.createElement('div');
@@ -660,6 +661,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function cleanupPortfolio() {
         contentArea.classList.remove('portfolio-mode');
         document.querySelector('.container').classList.remove('portfolio-active');
+        document.body.classList.remove('cc-portfolio-active');
+        if (window.ccTerminal) window.ccTerminal.close();
         const glow = contentArea.querySelector('.portfolio-glow');
         if (glow) glow.remove();
         if (typeof ScrollTrigger !== 'undefined') {
@@ -669,16 +672,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function navigateToPage(pageName) {
         cleanupPortfolio();
-        contentArea.innerHTML = pageContent[pageName];
+        const content = pageContent[pageName];
+        if (!content) {
+            // unknown page → fall back to portfolio (new home)
+            return navigateToPage('portfolio');
+        }
+        contentArea.innerHTML = content;
         updateActiveLink(pageName);
-        createPopups(); // Create popups after content is loaded
+        createPopups();
         if (pageName === 'portfolio') initPortfolio();
-        window.history.pushState({page: pageName}, pageName, `#${pageName}`);
+
+        // URL scheme: portfolio is root; old pages live under #legacy/<page>.
+        const hash = pageName === 'portfolio'
+            ? ''
+            : `#legacy/${pageName}`;
+        const url = hash || window.location.pathname + window.location.search;
+        window.history.pushState({page: pageName}, pageName, url);
 
         const substackScript = document.createElement('script');
         substackScript.src = "https://substackapi.com/embeds/feed.js";
         substackScript.async = true;
         document.body.appendChild(substackScript);
+    }
+
+    function resolvePageFromHash() {
+        const raw = window.location.hash.slice(1);
+        if (!raw) return 'portfolio';
+        // Back-compat: #portfolio still works.
+        if (raw === 'portfolio') return 'portfolio';
+        // New scheme: #legacy or #legacy/<page>
+        if (raw === 'legacy') return 'home';
+        if (raw.startsWith('legacy/')) {
+            const sub = raw.slice('legacy/'.length);
+            return pageContent[sub] ? sub : 'home';
+        }
+        // Legacy bookmarks like #about → route into legacy site.
+        if (pageContent[raw]) return raw;
+        return 'portfolio';
     }
 
     function updateActiveLink(pageName) {
@@ -701,6 +731,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key >= '1' && e.key <= '9') {
+            const t = e.target;
+            if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
             const index = parseInt(e.key) - 1;
             navigateToPage(pages[index]);
         }
@@ -770,8 +802,374 @@ document.addEventListener('DOMContentLoaded', function() {
     //         fetchLinkPreview(link.url, link.imgId);
     //     });
 
-    // Initial page load
-    const initialPage = window.location.hash.slice(1) || 'home';
-    navigateToPage(initialPage);
-    
+    // Initial page load — portfolio is the new main site; legacy pages under #legacy/<name>
+    navigateToPage(resolvePageFromHash());
+
+    window.addEventListener('hashchange', () => {
+        navigateToPage(resolvePageFromHash());
+    });
+
+    // ===== Claude Code terminal =====
+
+    const terminal = document.getElementById('cc-terminal');
+    const terminalBtn = document.getElementById('cc-terminal-btn');
+    const terminalBody = document.getElementById('cc-terminal-body');
+    const terminalForm = document.getElementById('cc-terminal-form');
+    const terminalInput = document.getElementById('cc-terminal-input');
+    const terminalClose = terminal.querySelector('.cc-terminal-close');
+
+    const history = [];
+    let historyIndex = -1;
+
+    function termPrint(text, cls) {
+        const line = document.createElement('div');
+        line.className = 'cc-terminal-line' + (cls ? ' ' + cls : '');
+        line.innerHTML = text;
+        terminalBody.appendChild(line);
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    }
+
+    function termClear() {
+        terminalBody.innerHTML = '';
+    }
+
+    function termWelcome() {
+        termClear();
+        termPrint('<span class="accent">steve@stevee.me</span> — claude code style terminal', 'muted');
+        termPrint('type <span class="accent">/help</span> to see available commands. <span class="muted">esc</span> to close.', 'muted');
+        termPrint('&nbsp;');
+    }
+
+    // Command registry — add new commands here as you wire them up.
+    // Each handler gets (args) and can call termPrint() to output lines.
+    const mantras = [
+        'you can just do things.',
+        'romanticize life. always choose adventure.',
+        'it\'s never, and I mean never, too late to redefine yourself.',
+        'when you vocalize your goals into the world, the whole world conspires to help.',
+        'find meaning in the mundane.',
+        'take whatever life throws at you and face it with grace.',
+    ];
+
+    const commands = {
+        help: {
+            desc: 'list available commands',
+            run() {
+                termPrint('available commands:', 'muted');
+                Object.entries(commands).forEach(([name, cmd]) => {
+                    if (cmd.hidden) return;
+                    termPrint(`  <span class="accent">/${name}</span>  <span class="muted">${cmd.desc}</span>`);
+                });
+                termPrint('&nbsp;');
+                termPrint('<span class="muted">psst — there are a few hidden ones too. poke around.</span>');
+            }
+        },
+        whoami: {
+            desc: 'who is this guy',
+            run() {
+                termPrint('steve nguyen', 'accent');
+                termPrint('pm @ servicenow. loves code, videography, writing.');
+                termPrint('currently: <span class="accent">brooklyn, ny</span>');
+                termPrint('<span class="muted">previously: ai search + automations teams. tpm-ing large scale software delivery.</span>');
+            }
+        },
+        about: {
+            desc: 'the short bio',
+            run() {
+                termPrint('> a pm who loves to code.');
+                termPrint('> an iphone videographer.');
+                termPrint('> a writer who never enjoyed english class.');
+                termPrint('&nbsp;');
+                termPrint('<span class="muted">I like when software intersects with delight, play and silliness.</span>');
+            }
+        },
+        projects: {
+            desc: 'stuff I\'ve shipped',
+            run() {
+                const rows = [
+                    ['2026', 'poker bankroll tracker',  'https://github.com/stevetng/poker_bankroll'],
+                    ['2026', 'ai flashcard generator',  'https://web-production-a8de0.up.railway.app/'],
+                    ['2025', 'prediction market terminal', 'https://prediction-market-dashboard-pi.vercel.app/'],
+                    ['2025', 'koalasheet',              'https://koala-sheet.vercel.app/'],
+                    ['2024', 'tech bro purity test',    'https://www.techbropuritytest.com/'],
+                    ['2024', 'daily hater',             'https://hater-jet.vercel.app/'],
+                    ['2024', 'sports narrator',         'https://github.com/stevetng/sports_narrator'],
+                ];
+                rows.forEach(([year, name, url]) => {
+                    termPrint(`<span class="muted">${year}</span>  <a href="${url}" target="_blank" rel="noopener">${name}</a>`);
+                });
+            }
+        },
+        silly: {
+            desc: 'my most viral silly experiment',
+            run() {
+                termPrint('we need sillier tech in the world.');
+                termPrint('→ <a href="https://www.techbropuritytest.com/" target="_blank" rel="noopener">tech bro purity test</a> <span class="muted">(my score: 67)</span>');
+            }
+        },
+        beans: {
+            desc: 'friendly beans — the community I host',
+            run() {
+                termPrint('<span class="accent">friendly beans</span> — tinkerers meeting every sunday in cambridge.', 'accent');
+                termPrint('<span class="muted">we follow the same format every week: munchkins → intros → 2hrs deep work → show & tell.</span>');
+                termPrint('→ <a href="https://lu.ma/beans" target="_blank" rel="noopener">lu.ma/beans</a>');
+            }
+        },
+        sparkly: {
+            desc: 'the people who give me energy',
+            run() {
+                const people = [
+                    ['Adam Von Arnim',  'endless humor + wonder',            'https://avonarnim.github.io/'],
+                    ['Mario Figueroa',  'craft, polish, impeccable memes',    'https://mariofigueroa.space'],
+                    ['Jess Wang',       'wisdom + silliness + creativity',    'https://jwang.work'],
+                    ['Arielle Lok',     'embodiment of "just do things"',     'https://ariellelok.com/about.html'],
+                    ['Claire Wang',     'silly, thoughtful co-host',          'https://www.clairebookworm.com/'],
+                    ['HudZah',          'built a nuclear fusor in his room',  'https://www.hudzah.com/'],
+                    ['Ben Dixon',       'child-like wonder',                  'https://malted.dev/'],
+                ];
+                termPrint('<span class="muted">a sample — the full list lives on the main site.</span>');
+                people.forEach(([name, blurb, url]) => {
+                    termPrint(`  <a href="${url}" target="_blank" rel="noopener">${name}</a> <span class="muted">— ${blurb}</span>`);
+                });
+                termPrint('&nbsp;');
+                termPrint('<span class="muted">maybe you? → </span><a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+            }
+        },
+        reading: {
+            desc: 'books + blogs that rewired me',
+            run() {
+                termPrint('<span class="accent">blogs</span>', 'accent');
+                termPrint('  <a href="https://paulgraham.com/cities.html" target="_blank" rel="noopener">paul graham — cities</a>');
+                termPrint('  <a href="https://worksinprogress.co/issue/why-prediction-markets-arent-popular/" target="_blank" rel="noopener">works in progress — prediction markets</a>');
+                termPrint('  <a href="https://www.avabear.xyz/p/the-true-shape-of-a-thing" target="_blank" rel="noopener">ava bookbear — the true shape of a thing</a>');
+                termPrint('&nbsp;');
+                termPrint('<span class="accent">books & media</span>', 'accent');
+                termPrint('  <span class="muted">shantaram, the bear s2e7, about time, when breath becomes air, the alchemist, educated.</span>');
+            }
+        },
+        hire: {
+            desc: 'contract work pitch',
+            run() {
+                termPrint('available for <span class="accent">front-end</span> + <span class="accent">marketing video</span> work on a contract basis.');
+                termPrint('→ <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+            }
+        },
+        contact: {
+            desc: 'how to reach me',
+            run() {
+                termPrint('email  → <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+                termPrint('twitter → <a href="https://x.com/WoahIsThatSteve" target="_blank" rel="noopener">@WoahIsThatSteve</a>');
+                termPrint('substack → <a href="https://steviesteveee.substack.com" target="_blank" rel="noopener">steviesteveee.substack.com</a>');
+            }
+        },
+        legacy: {
+            desc: 'visit the old stevee.me',
+            run() {
+                termPrint('<span class="accent">legacy site</span> — my old digital garden.', 'accent');
+                termPrint('<span class="muted">a single-page app in pure html/css/js with hidden popups, hand-picked blogs + books, and a running list of sparkly people. kept around for the memories.</span>');
+                termPrint('&nbsp;');
+                termPrint('→ <a href="#legacy/home">legacy home</a> <span class="muted">— the old landing page, easter eggs and all</span>');
+                termPrint('→ <a href="#legacy/about">legacy about</a> <span class="muted">— "you can just do things"</span>');
+            }
+        },
+        coffee: {
+            desc: 'grab coffee in brooklyn',
+            run() {
+                termPrint('currently in <span class="accent">brooklyn, ny</span>.');
+                termPrint('<span class="muted">if you\'re someone who lets curiosity + serendipity guide you, reach out — I\'d love to figure out some oddly specific hang out.</span>');
+                termPrint('→ <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+            }
+        },
+        mantra: {
+            desc: 'a little wisdom, randomized',
+            run() {
+                const pick = mantras[Math.floor(Math.random() * mantras.length)];
+                termPrint(`<span class="accent">"${pick}"</span>`);
+            }
+        },
+        stats: {
+            desc: 'the brag board',
+            run() {
+                termPrint('♟️  chess.com peak: <span class="accent">1800</span> <span class="muted">(cast in a botez sisters video)</span>');
+                termPrint('🎮  tft: <span class="accent">top 0.1%</span>');
+                termPrint('🎂  threw a steve-themed 21st birthday — <span class="accent">200 people</span> dressed as a historic steve');
+                termPrint('🫘  friendly beans — <span class="accent">weekly for 2+ years</span>');
+            }
+        },
+        // ===== hidden / classic CLI easter eggs =====
+        sudo: {
+            desc: 'you are not in the sudoers file',
+            hidden: true,
+            run(args) {
+                const joined = (args || []).join(' ');
+                if (joined.toLowerCase() === 'make me a sandwich') {
+                    termPrint('okay. 🥪', 'accent');
+                    return;
+                }
+                termPrint(`steve is not in the sudoers file. this incident will be reported.`, 'warn');
+            }
+        },
+        ls: {
+            desc: 'list the site',
+            hidden: true,
+            run() {
+                ['home', 'about', 'writing', 'making', 'consuming', 'sparkly', 'hosting', 'silly', 'bonus', 'portfolio']
+                    .forEach(p => termPrint(`  <span class="accent">${p}/</span>`));
+            }
+        },
+        cat: {
+            desc: 'cat a "file"',
+            hidden: true,
+            run(args) {
+                const file = (args[0] || '').toLowerCase();
+                if (!file) { termPrint('usage: /cat &lt;file&gt;', 'muted'); return; }
+                if (file.includes('secret')) { termPrint('nice try.', 'warn'); return; }
+                if (file.includes('haha') || file.includes('.png')) { termPrint('&lt;binary data — won\'t render in a text terminal&gt;', 'muted'); return; }
+                termPrint(`cat: ${escapeHtml(file)}: no such file. try <span class="accent">/ls</span>.`, 'warn');
+            }
+        },
+        rm: {
+            desc: 'rm something',
+            hidden: true,
+            run(args) {
+                if (args.includes('-rf') && args.includes('/')) {
+                    termPrint('absolutely not.', 'warn');
+                    return;
+                }
+                termPrint('rm: this terminal is read-only. nothing was harmed.', 'muted');
+            }
+        },
+        xyzzy: {
+            desc: 'colossal cave',
+            hidden: true,
+            run() { termPrint('nothing happens.', 'muted'); }
+        },
+        fortune: {
+            desc: 'a fortune cookie',
+            hidden: true,
+            run() {
+                const pick = mantras[Math.floor(Math.random() * mantras.length)];
+                termPrint(`🥠  ${pick}`);
+            }
+        },
+        konami: {
+            desc: '↑↑↓↓←→←→ba',
+            hidden: true,
+            run() {
+                termPrint('🎮 <span class="accent">+30 lives.</span> go make something silly.');
+            }
+        },
+        clear: {
+            desc: 'clear the terminal',
+            run() { termClear(); }
+        },
+        exit: {
+            desc: 'close the terminal',
+            run() { openTerminal(false); }
+        }
+    };
+
+    function termRun(raw) {
+        const input = raw.trim();
+        if (!input) return;
+        termPrint(input, 'user');
+
+        if (!input.startsWith('/')) {
+            termPrint(`unknown input: <span class="accent">${escapeHtml(input)}</span>. commands start with <span class="accent">/</span> — try <span class="accent">/help</span>.`, 'warn');
+            return;
+        }
+
+        const [name, ...args] = input.slice(1).split(/\s+/);
+        const cmd = commands[name.toLowerCase()];
+        if (!cmd) {
+            termPrint(`command not found: <span class="accent">/${escapeHtml(name)}</span>. try <span class="accent">/help</span>.`, 'warn');
+            return;
+        }
+        try {
+            cmd.run(args);
+        } catch (err) {
+            termPrint(`error running /${name}: ${escapeHtml(String(err))}`, 'warn');
+        }
+    }
+
+    function escapeHtml(s) {
+        return s.replace(/[&<>"']/g, c => ({
+            '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+        }[c]));
+    }
+
+    function openTerminal(open) {
+        const shouldOpen = open !== false;
+        if (shouldOpen) {
+            terminal.hidden = false;
+            // next frame so the transition plays
+            requestAnimationFrame(() => terminal.classList.add('open'));
+            document.body.classList.add('cc-terminal-open');
+            terminalBtn.setAttribute('aria-expanded', 'true');
+            if (!terminalBody.childNodes.length) termWelcome();
+            setTimeout(() => terminalInput.focus(), 30);
+        } else {
+            terminal.classList.remove('open');
+            document.body.classList.remove('cc-terminal-open');
+            terminalBtn.setAttribute('aria-expanded', 'false');
+            setTimeout(() => { if (!terminal.classList.contains('open')) terminal.hidden = true; }, 200);
+        }
+    }
+
+    window.ccTerminal = {
+        open: () => openTerminal(true),
+        close: () => openTerminal(false),
+        register(name, desc, run) { commands[name] = { desc, run }; }
+    };
+
+    terminalBtn.addEventListener('click', () => {
+        openTerminal(!terminal.classList.contains('open'));
+    });
+    terminalClose.addEventListener('click', () => openTerminal(false));
+
+    terminalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const value = terminalInput.value;
+        if (value.trim()) {
+            history.push(value);
+            historyIndex = history.length;
+        }
+        terminalInput.value = '';
+        termRun(value);
+    });
+
+    terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowUp') {
+            if (history.length && historyIndex > 0) {
+                historyIndex--;
+                terminalInput.value = history[historyIndex];
+                e.preventDefault();
+            }
+        } else if (e.key === 'ArrowDown') {
+            if (historyIndex < history.length - 1) {
+                historyIndex++;
+                terminalInput.value = history[historyIndex];
+            } else {
+                historyIndex = history.length;
+                terminalInput.value = '';
+            }
+            e.preventDefault();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        // Esc closes
+        if (e.key === 'Escape' && terminal.classList.contains('open')) {
+            openTerminal(false);
+            terminalBtn.focus();
+            return;
+        }
+        // Cmd/Ctrl+K toggles — only on portfolio page
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k'
+            && document.body.classList.contains('cc-portfolio-active')) {
+            e.preventDefault();
+            openTerminal(!terminal.classList.contains('open'));
+        }
+    });
+
 });
