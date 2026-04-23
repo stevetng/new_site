@@ -838,6 +838,31 @@ document.addEventListener('DOMContentLoaded', function() {
         termPrint('<span class="accent">steve@stevee.me</span> — claude code style terminal', 'muted');
         termPrint('type <span class="accent">/help</span> to see available commands. <span class="muted">esc</span> to close.', 'muted');
         termPrint('&nbsp;');
+        termPrint('<span class="muted">new here? → sign my wall with </span><a href="#" class="cc-quicklink" data-cmd="/guestbook">/guestbook</a><span class="muted">, switch vibes with </span><a href="#" class="cc-quicklink" data-cmd="/theme">/theme</a><span class="muted">, or try </span><a href="#" class="cc-quicklink" data-cmd="/ascii">/ascii</a><span class="muted">.</span>');
+        termPrint('&nbsp;');
+    }
+
+    // ==== theme ====
+    const THEME_KEY = 'cc-theme';
+    function applyTheme(name) {
+        document.body.classList.toggle('cc-theme-classic', name === 'classic');
+        try { localStorage.setItem(THEME_KEY, name); } catch (e) {}
+    }
+    try {
+        const saved = localStorage.getItem(THEME_KEY);
+        if (saved === 'classic') applyTheme('classic');
+    } catch (e) {}
+
+    // ==== guestbook ====
+    const GUESTBOOK_KEY = 'cc-guestbook';
+    function loadGuestbook() {
+        try {
+            const raw = localStorage.getItem(GUESTBOOK_KEY);
+            return raw ? JSON.parse(raw) : [];
+        } catch (e) { return []; }
+    }
+    function saveGuestbook(entries) {
+        try { localStorage.setItem(GUESTBOOK_KEY, JSON.stringify(entries)); } catch (e) {}
     }
 
     // Command registry — add new commands here as you wire them up.
@@ -864,13 +889,104 @@ document.addEventListener('DOMContentLoaded', function() {
                 termPrint('<span class="muted">psst — there are a few hidden ones too. poke around.</span>');
             }
         },
+        guestbook: {
+            desc: 'sign my wall — or see who\'s signed',
+            run(args) {
+                const GUEST_LIMIT = 25;
+                const sub = (args[0] || '').toLowerCase();
+                const entries = loadGuestbook();
+
+                if (sub === 'clear') {
+                    saveGuestbook([]);
+                    termPrint('your local guestbook view was cleared.', 'muted');
+                    return;
+                }
+
+                if (sub === 'sign') {
+                    const msg = args.slice(1).join(' ').trim();
+                    if (!msg) { termPrint('usage: <span class="accent">/guestbook sign your message here</span>', 'warn'); return; }
+                    if (msg.length > 200) { termPrint('keep it under 200 chars, friend.', 'warn'); return; }
+                    entries.push({ msg, at: Date.now() });
+                    saveGuestbook(entries);
+                    termPrint('<span class="accent">✎ signed.</span> thanks for stopping by.');
+                    return;
+                }
+
+                const showAll = sub === 'expand' || sub === 'all' || sub === 'more';
+
+                termPrint('<span class="accent">guestbook</span>', 'accent');
+                termPrint('<span class="muted">currently stored locally in your browser. shared backend coming soon.</span>');
+                termPrint('&nbsp;');
+                if (!entries.length) {
+                    termPrint('<span class="muted">nobody\'s signed yet. be the first:</span>');
+                    termPrint('  <span class="accent">/guestbook sign</span> <span class="muted">&lt;your message&gt;</span>');
+                    return;
+                }
+
+                const ordered = entries.slice().reverse();
+                const visible = showAll ? ordered : ordered.slice(0, GUEST_LIMIT);
+                visible.forEach(({ msg, at }) => {
+                    const when = new Date(at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+                    termPrint(`  <span class="muted">${when}</span>  ${escapeHtml(msg)}`);
+                });
+
+                const hidden = ordered.length - visible.length;
+                if (hidden > 0) {
+                    termPrint('&nbsp;');
+                    termPrint(`<span class="muted">+ ${hidden} older signature${hidden === 1 ? '' : 's'}. </span><a href="#" class="cc-quicklink" data-cmd="/guestbook expand">/guestbook expand</a><span class="muted"> to see them all.</span>`);
+                }
+                termPrint('&nbsp;');
+                termPrint('<span class="muted">add one: </span><span class="accent">/guestbook sign &lt;message&gt;</span>');
+            }
+        },
+        theme: {
+            desc: 'toggle between claude code + classic green',
+            run(args) {
+                const cur = document.body.classList.contains('cc-theme-classic') ? 'classic' : 'claude';
+                const requested = (args[0] || '').toLowerCase();
+                let next;
+                if (requested === 'claude' || requested === 'classic') {
+                    next = requested;
+                } else if (requested && requested !== '') {
+                    termPrint(`unknown theme: <span class="accent">${escapeHtml(requested)}</span>. try <span class="accent">claude</span> or <span class="accent">classic</span>.`, 'warn');
+                    return;
+                } else {
+                    next = cur === 'classic' ? 'claude' : 'classic';
+                }
+                applyTheme(next);
+                termPrint(`theme → <span class="accent">${next}</span> <span class="muted">(saved to this browser)</span>`);
+            }
+        },
+        ascii: {
+            desc: 'the cool middle-school S',
+            run() {
+                const s = [
+                    '   ^   ',
+                    '  / \\  ',
+                    ' /   \\ ',
+                    '/     \\',
+                    '|  |  |',
+                    '|  |  |',
+                    '\\  \\  /',
+                    ' \\  \\/ ',
+                    ' /\\  \\ ',
+                    '/  \\  \\',
+                    '|  |  |',
+                    '|  |  |',
+                    '\\     /',
+                    ' \\   / ',
+                    '  \\ /  ',
+                    '   v   ',
+                ];
+                termPrint('<pre class="cc-ascii">' + s.map(escapeHtml).join('\n') + '</pre>');
+            }
+        },
         whoami: {
             desc: 'who is this guy',
             run() {
                 termPrint('steve nguyen', 'accent');
                 termPrint('pm @ servicenow. loves code, videography, writing.');
                 termPrint('currently: <span class="accent">brooklyn, ny</span>');
-                termPrint('<span class="muted">previously: ai search + automations teams. tpm-ing large scale software delivery.</span>');
             }
         },
         about: {
@@ -879,8 +995,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 termPrint('> a pm who loves to code.');
                 termPrint('> an iphone videographer.');
                 termPrint('> a writer who never enjoyed english class.');
-                termPrint('&nbsp;');
-                termPrint('<span class="muted">I like when software intersects with delight, play and silliness.</span>');
             }
         },
         projects: {
@@ -904,14 +1018,15 @@ document.addEventListener('DOMContentLoaded', function() {
             desc: 'my most viral silly experiment',
             run() {
                 termPrint('we need sillier tech in the world.');
-                termPrint('→ <a href="https://www.techbropuritytest.com/" target="_blank" rel="noopener">tech bro purity test</a> <span class="muted">(my score: 67)</span>');
+                termPrint('→ <a href="https://www.stevee.me/techbro" target="_blank" rel="noopener">tech bro purity test</a> <span class="muted">(my score: 67)</span>');
             }
         },
         beans: {
-            desc: 'friendly beans — the community I host',
+            desc: 'friendly beans — the community I hosted',
             run() {
-                termPrint('<span class="accent">friendly beans</span> — tinkerers meeting every sunday in cambridge.', 'accent');
-                termPrint('<span class="muted">we follow the same format every week: munchkins → intros → 2hrs deep work → show & tell.</span>');
+                termPrint('<span class="accent">friendly beans</span> — a community of tinkerers meeting every sunday in cambridge.', 'accent');
+                termPrint('<span class="muted">I ran this for a year — it\'s still going strong today without me.</span>');
+                termPrint('<span class="muted">the format: munchkins → intros w/ a fun question → 2hrs deep work → show & tell.</span>');
                 termPrint('→ <a href="https://lu.ma/beans" target="_blank" rel="noopener">lu.ma/beans</a>');
             }
         },
@@ -919,32 +1034,97 @@ document.addEventListener('DOMContentLoaded', function() {
             desc: 'the people who give me energy',
             run() {
                 const people = [
-                    ['Adam Von Arnim',  'endless humor + wonder',            'https://avonarnim.github.io/'],
-                    ['Mario Figueroa',  'craft, polish, impeccable memes',    'https://mariofigueroa.space'],
-                    ['Jess Wang',       'wisdom + silliness + creativity',    'https://jwang.work'],
-                    ['Arielle Lok',     'embodiment of "just do things"',     'https://ariellelok.com/about.html'],
-                    ['Claire Wang',     'silly, thoughtful co-host',          'https://www.clairebookworm.com/'],
-                    ['HudZah',          'built a nuclear fusor in his room',  'https://www.hudzah.com/'],
-                    ['Ben Dixon',       'child-like wonder',                  'https://malted.dev/'],
+                    ['Adam Von Arnim',    'endless sense of humor + wonder for the world',                        'https://avonarnim.github.io/'],
+                    ['Mario Figueroa',    'relentless pursuit of craft + polish. impeccable memes and style',     'https://mariofigueroa.space'],
+                    ['Jess Wang',         'rare combination of wisdom and silliness with heavy creativity',        'https://jwang.work'],
+                    ['Arielle Lok',       'living embodiment of "you can just do things"',                         'https://ariellelok.com/about.html'],
+                    ['Claire Wang',       'silly, thoughtful, friendliest bean — a wonderful co-host',             'https://www.clairebookworm.com/'],
+                    ['Anson Yu',          'rare case of energetic irl and online',                                 'https://ansonyu.me'],
+                    ['HudZah',            'walked in once and he was building a nuclear fusor',                    'https://www.hudzah.com/'],
+                    ['Beez',              'force of nature. fiercely loyal friend and properly critical editor',   'https://x.com/abigaillafrica?lang=en'],
+                    ['Gitika Pahwa',      'clever, witty and resilient. really good at call backs',                'https://www.linkedin.com/in/gitikapahwa/'],
+                    ['Tobi Ogunyankin',   'silly. coolest style, killer dance moves, incredible storytelling',     'https://www.instagram.com/tobi.og/'],
+                    ['Joel Yoon',         'wired differently, and in this case was the electrician rewiring',      'https://joelyoon.com/'],
+                    ['Samuel Victoria',   'immensely loyal friend. creative, thoughtful and a hustler',            'https://www.samvictoria.co/'],
+                    ['Ami Yoshimura',     'king of community building. thoughtful, dedicated super connector',     'https://www.instagram.com/amiyoshimura_/'],
+                    ['Rishi Kothari',     'best person to stroll harvard campus with. curious, kind, delightful',  'https://www.rishi.cx/'],
+                    ['Alex Chueh',        'meets a new person every single day. living example of seeking discomfort', 'https://substack.com/@alexanderao'],
+                    ['Ben Dixon',         'brings child-like wonder and delight to every interaction',             'https://malted.dev/'],
                 ];
-                termPrint('<span class="muted">a sample — the full list lives on the main site.</span>');
                 people.forEach(([name, blurb, url]) => {
                     termPrint(`  <a href="${url}" target="_blank" rel="noopener">${name}</a> <span class="muted">— ${blurb}</span>`);
                 });
                 termPrint('&nbsp;');
-                termPrint('<span class="muted">maybe you? → </span><a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+                termPrint('<span class="muted">maybe you? if you let curiosity + serendipity guide you → </span><a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
             }
         },
         reading: {
             desc: 'books + blogs that rewired me',
             run() {
+                const blogs = [
+                    {
+                        title: 'paul graham — cities',
+                        url: 'https://paulgraham.com/cities.html',
+                        desc: 'this post kick-started my brain on how to describe cities beyond the generic descriptors like food quality + public transportation people usually cite.'
+                    },
+                    {
+                        title: 'works in progress — prediction markets',
+                        url: 'https://worksinprogress.co/issue/why-prediction-markets-arent-popular/',
+                        desc: 'opened my eyes to what makes writing truly persuasive. the writers are exceptional at presenting an argument and addressing counter-arguments the moment you begin to think of them.'
+                    },
+                    {
+                        title: 'ava bookbear — the true shape of a thing',
+                        url: 'https://www.avabear.xyz/p/the-true-shape-of-a-thing',
+                        desc: 'if something feels good, you can just do it and continue doing it, sharing it with the world and seeing where it takes you. ava consistently puts the complex into digestible, impactful writing.'
+                    }
+                ];
+                const media = [
+                    {
+                        title: 'Shantaram — Gregory David Roberts',
+                        url: 'https://www.amazon.com/Shantaram-Novel-Gregory-David-Roberts/dp/0312330537',
+                        desc: 'my favorite use of the english language I\'ve ever read. convinced me to romanticize life and to always choose adventure.'
+                    },
+                    {
+                        title: 'The Bear — S2E7 "Forks"',
+                        url: 'https://en.wikipedia.org/wiki/The_Bear_(TV_series)',
+                        desc: 'it\'s never and I mean never too late to redefine yourself. you can just do things.'
+                    },
+                    {
+                        title: 'About Time',
+                        url: 'https://www.imdb.com/title/tt2194499/',
+                        desc: 'a warm hug that will comfort you at all the different phases of life. love is not about being perfect. stop living life like you wanted a second chance at everyday. take whatever life throws at you and face it with grace.'
+                    },
+                    {
+                        title: 'When Breath Becomes Air — Paul Kalanithi',
+                        url: 'https://www.amazon.com/When-Breath-Becomes-Paul-Kalanithi/dp/081298840X',
+                        desc: 'there\'s no one better to talk about life than those who are closest to death. convinced me I can pursue a "higher calling" while not getting lost in that pursuit — and find meaning in the mundane.'
+                    },
+                    {
+                        title: 'The Alchemist — Paulo Coelho',
+                        url: 'https://www.amazon.com/Alchemist-Paulo-Coelho/dp/0061122416',
+                        desc: 'when you vocalize your goals + dreams into the world, the whole world conspires to help you get there. if love is meant to be, letting go will not mean it\'s gone.'
+                    },
+                    {
+                        title: 'Educated — Tara Westover',
+                        url: 'https://www.amazon.com/Educated-Memoir-Tara-Westover/dp/0399590501',
+                        desc: 'I\'ve never felt closer to understanding why my immigrant parents so badly wished for me to go to college. exceptional storytelling — the first time in a long time I read 100+ pages in one session.'
+                    }
+                ];
+                const renderItem = (item) => {
+                    const id = 'cc-r-' + Math.random().toString(36).slice(2, 9);
+                    termPrint(
+                        `  <a href="#" class="cc-expand" data-target="${id}">${item.title}</a> `
+                      + `<a href="${item.url}" target="_blank" rel="noopener" class="cc-ext" title="open">↗</a>`
+                      + `<span class="cc-reveal" data-id="${id}" hidden>&nbsp;&nbsp;&nbsp;<span class="muted">${item.desc}</span></span>`
+                    );
+                };
                 termPrint('<span class="accent">blogs</span>', 'accent');
-                termPrint('  <a href="https://paulgraham.com/cities.html" target="_blank" rel="noopener">paul graham — cities</a>');
-                termPrint('  <a href="https://worksinprogress.co/issue/why-prediction-markets-arent-popular/" target="_blank" rel="noopener">works in progress — prediction markets</a>');
-                termPrint('  <a href="https://www.avabear.xyz/p/the-true-shape-of-a-thing" target="_blank" rel="noopener">ava bookbear — the true shape of a thing</a>');
+                blogs.forEach(renderItem);
                 termPrint('&nbsp;');
                 termPrint('<span class="accent">books & media</span>', 'accent');
-                termPrint('  <span class="muted">shantaram, the bear s2e7, about time, when breath becomes air, the alchemist, educated.</span>');
+                media.forEach(renderItem);
+                termPrint('&nbsp;');
+                termPrint('<span class="muted">tap a title to expand, ↗ to open.</span>');
             }
         },
         hire: {
@@ -978,13 +1158,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 termPrint('currently in <span class="accent">brooklyn, ny</span>.');
                 termPrint('<span class="muted">if you\'re someone who lets curiosity + serendipity guide you, reach out — I\'d love to figure out some oddly specific hang out.</span>');
                 termPrint('→ <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
-            }
-        },
-        mantra: {
-            desc: 'a little wisdom, randomized',
-            run() {
-                const pick = mantras[Math.floor(Math.random() * mantras.length)];
-                termPrint(`<span class="accent">"${pick}"</span>`);
             }
         },
         stats: {
@@ -1126,6 +1299,27 @@ document.addEventListener('DOMContentLoaded', function() {
         openTerminal(!terminal.classList.contains('open'));
     });
     terminalClose.addEventListener('click', () => openTerminal(false));
+
+    // click-to-expand for reading list items
+    terminalBody.addEventListener('click', (e) => {
+        const quick = e.target.closest('.cc-quicklink');
+        if (quick) {
+            e.preventDefault();
+            const cmd = quick.getAttribute('data-cmd');
+            if (cmd) termRun(cmd);
+            return;
+        }
+        const trigger = e.target.closest('.cc-expand');
+        if (!trigger) return;
+        e.preventDefault();
+        const id = trigger.getAttribute('data-target');
+        const reveal = terminalBody.querySelector(`.cc-reveal[data-id="${id}"]`);
+        if (!reveal) return;
+        const isHidden = reveal.hasAttribute('hidden');
+        if (isHidden) reveal.removeAttribute('hidden'); else reveal.setAttribute('hidden', '');
+        trigger.classList.toggle('open', isHidden);
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+    });
 
     terminalForm.addEventListener('submit', (e) => {
         e.preventDefault();
