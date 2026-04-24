@@ -1824,9 +1824,21 @@ body.cc-terminal-open .cc-terminal-btn {
         height: 11px;
     }
     .cc-terminal {
-        width: calc(100vw - 24px);
-        height: 70vh;
-        max-height: calc(100vh - 100px);
+        top: 56px;
+        left: 12px;
+        right: 12px;
+        width: auto;
+        height: calc(100vh - 72px);
+        height: calc(100dvh - 72px); /* dvh shrinks with the mobile keyboard */
+        max-height: none;
+        transform: scale(0.96);
+        transform-origin: top center;
+    }
+    .cc-terminal.open {
+        transform: scale(1);
+    }
+    .cc-terminal-input {
+        font-size: 16px; /* >=16px prevents iOS auto-zoom on focus */
     }
 }
 
