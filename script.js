@@ -278,6 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="#" class="portfolio-filter active-filter" data-filter="all">All</a>
                     <a href="#" class="portfolio-filter" data-filter="software">Software</a>
                     <a href="#" class="portfolio-filter" data-filter="community">Community</a>
+                    <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank">Resume ↗</a>
                     <a href="https://steviesteveee.substack.com/" target="_blank">Writing ↗</a>
                     <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">Videos ↗</a>
                 </div>
@@ -1134,7 +1135,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 termPrint('  <span class="accent">→ front-end software engineering</span>');
                 termPrint('  <span class="accent">→ operations</span> <span class="muted">(with a focus on automation)</span>');
                 termPrint('&nbsp;');
+                termPrint('resume → <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank" rel="noopener">view on google drive ↗</a>');
                 termPrint('reach out → <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
+            }
+        },
+        resume: {
+            desc: 'my resume (google drive)',
+            run() {
+                termPrint('→ <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank" rel="noopener">resume ↗</a> <span class="muted">(opens in a new tab)</span>');
             }
         },
         contact: {
