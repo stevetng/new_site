@@ -854,16 +854,22 @@ document.addEventListener('DOMContentLoaded', function() {
         if (saved === 'classic') applyTheme('classic');
     } catch (e) {}
 
-    // ==== guestbook ====
-    const GUESTBOOK_KEY = 'cc-guestbook';
-    function loadGuestbook() {
-        try {
-            const raw = localStorage.getItem(GUESTBOOK_KEY);
-            return raw ? JSON.parse(raw) : [];
-        } catch (e) { return []; }
+    // ==== guestbook (shared, backed by /api/guestbook) ====
+    async function fetchGuestbook() {
+        const res = await fetch('/api/guestbook', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        return Array.isArray(data.entries) ? data.entries : [];
     }
-    function saveGuestbook(entries) {
-        try { localStorage.setItem(GUESTBOOK_KEY, JSON.stringify(entries)); } catch (e) {}
+    async function signGuestbook(msg) {
+        const res = await fetch('/api/guestbook', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ msg })
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
+        return data;
     }
 
     // Command registry — add new commands here as you wire them up.
@@ -892,46 +898,53 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         guestbook: {
             desc: 'sign my wall — or see who\'s signed',
-            run(args) {
+            async run(args) {
                 const GUEST_LIMIT = 25;
                 const sub = (args[0] || '').toLowerCase();
-                const entries = loadGuestbook();
-
-                if (sub === 'clear') {
-                    saveGuestbook([]);
-                    termPrint('your local guestbook view was cleared.', 'muted');
-                    return;
-                }
 
                 if (sub === 'sign') {
                     const msg = args.slice(1).join(' ').trim();
                     if (!msg) { termPrint('usage: <span class="accent">/guestbook sign your message here</span>', 'warn'); return; }
                     if (msg.length > 200) { termPrint('keep it under 200 chars, friend.', 'warn'); return; }
-                    entries.push({ msg, at: Date.now() });
-                    saveGuestbook(entries);
-                    termPrint('<span class="accent">✎ signed.</span> thanks for stopping by.');
+                    termPrint('<span class="muted">signing…</span>');
+                    try {
+                        await signGuestbook(msg);
+                        termPrint('<span class="accent">✎ signed.</span> thanks for stopping by.');
+                    } catch (err) {
+                        termPrint(`<span class="warn">${escapeHtml(err.message || 'sign failed.')}</span>`, 'warn');
+                    }
                     return;
                 }
 
                 const showAll = sub === 'expand' || sub === 'all' || sub === 'more';
 
                 termPrint('<span class="accent">guestbook</span>', 'accent');
-                termPrint('<span class="muted">currently stored locally in your browser. shared backend coming soon.</span>');
+                termPrint('<span class="muted">a shared wall — anyone can sign, everyone can see.</span>');
                 termPrint('&nbsp;');
+                termPrint('<span class="muted">loading…</span>');
+
+                let entries = [];
+                try {
+                    entries = await fetchGuestbook();
+                } catch (err) {
+                    termPrint(`<span class="warn">couldn't reach the wall (${escapeHtml(err.message || 'network error')}).</span>`, 'warn');
+                    return;
+                }
+
                 if (!entries.length) {
                     termPrint('<span class="muted">nobody\'s signed yet. be the first:</span>');
                     termPrint('  <span class="accent">/guestbook sign</span> <span class="muted">&lt;your message&gt;</span>');
                     return;
                 }
 
-                const ordered = entries.slice().reverse();
-                const visible = showAll ? ordered : ordered.slice(0, GUEST_LIMIT);
+                // server returns newest-first
+                const visible = showAll ? entries : entries.slice(0, GUEST_LIMIT);
                 visible.forEach(({ msg, at }) => {
                     const when = new Date(at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
                     termPrint(`  <span class="muted">${when}</span>  ${escapeHtml(msg)}`);
                 });
 
-                const hidden = ordered.length - visible.length;
+                const hidden = entries.length - visible.length;
                 if (hidden > 0) {
                     termPrint('&nbsp;');
                     termPrint(`<span class="muted">+ ${hidden} older signature${hidden === 1 ? '' : 's'}. </span><a href="#" class="cc-quicklink" data-cmd="/guestbook expand">/guestbook expand</a><span class="muted"> to see them all.</span>`);
@@ -1253,7 +1266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    function termRun(raw) {
+    async function termRun(raw) {
         const input = raw.trim();
         if (!input) return;
         termPrint(input, 'user');
@@ -1270,7 +1283,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         try {
-            cmd.run(args);
+            await cmd.run(args);
         } catch (err) {
             termPrint(`error running /${name}: ${escapeHtml(String(err))}`, 'warn');
         }
