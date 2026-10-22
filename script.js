@@ -268,7 +268,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
                         <li><span>Make videos — a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone (60K+ views) and <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels &amp; short films</a></span></li>
-                        <li><span>Winning poker player — $50–75/hr over 50,000+ hands, live and online</span></li>
+                        <li><span>50,000+ hands of poker, live and online — still in the green, ask me about the bad beats</span></li>
                         <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
                     </ul>
                 </div>
