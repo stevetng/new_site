@@ -268,11 +268,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         <li><span>Shipped AI Data Explorer and AI Search @ServiceNow — LLM features for enterprise customers, moved from biannual to monthly releases</span></li>
                         <li><span>Led a database migration for 20+ enterprise customers end to end, turning manual runbooks into automated templates</span></li>
                         <li><span>Built three AI products solo this year with Claude Code — <a href="https://sweatlab.app" target="_blank">SweatLab</a> (live, paid), Porch, and Sticker Studio</span></li>
-                        <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
-                        <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>Make videos — a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone (60K+ views) and <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels &amp; short films</a></span></li>
                         <li><span>50,000+ hands of poker, live and online — still in the green, ask me about the bad beats</span></li>
                         <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
+                        <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
+                        <li><span>Top 0.1% TFT player worldwide</span></li>
                     </ul>
                 </div>
 
@@ -342,6 +342,38 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </div>
+                    <a href="https://x.com/artinmemes/status/2109962744846037022" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="portfolio-card-preview" style="background: linear-gradient(135deg, #0f766e, #22c55e);">
+                                <div class="preview-browser-bar">
+                                    <span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span>
+                                    <span class="preview-url">cron: */5 * * * *  ·  usic@vps</span>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-code-lines">
+                                        <div class="preview-code-line" style="width: 70%; background: rgba(0,0,0,0.2)"></div>
+                                        <div class="preview-code-line" style="width: 45%; background: rgba(0,0,0,0.15)"></div>
+                                        <div class="preview-code-line" style="width: 85%; background: rgba(0,0,0,0.2)"></div>
+                                        <div class="preview-code-line" style="width: 35%; background: rgba(0,0,0,0.1)"></div>
+                                    </div>
+                                    <span class="preview-icon">📈</span>
+                                </div>
+                            </div>
+                            <span class="portfolio-card-badge">Human in the loop</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2026</div>
+                            <h3>Robinhood Trading Agent</h3>
+                            <p>A momentum-pullback strategy from a post I liked (this card links to it), written as plain-English rules that Claude Code runs every 5 minutes on a $5 Linux server against Robinhood's trading MCP. It screens, sizes, and submits orders, but every one waits for my tap in the app.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Claude Code</span>
+                                <span class="portfolio-tag">Robinhood MCP</span>
+                                <span class="portfolio-tag">Cron</span>
+                                <span class="portfolio-tag">Linux VPS</span>
+                                <span class="portfolio-tag">Python</span>
+                            </div>
+                        </div>
+                    </a>
                     <a href="https://github.com/stevetng/poker_bankroll" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
                             <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">localhost:5173</span></div>
@@ -1077,6 +1109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     ['2026', 'sweatlab',                'https://sweatlab.app'],
                     ['2026', 'porch (in development)',  'https://porch-production-e216.up.railway.app/'],
                     ['2026', 'sticker studio (in development)', null],
+                    ['2026', 'robinhood trading agent',  'https://x.com/artinmemes/status/2109962744846037022'],
                     ['2026', 'poker bankroll tracker',  'https://github.com/stevetng/poker_bankroll'],
                     ['2026', 'ai flashcard generator',  'https://web-production-a8de0.up.railway.app/'],
                     ['2025', 'prediction market terminal', 'https://prediction-market-dashboard-pi.vercel.app/'],
