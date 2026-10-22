@@ -261,12 +261,15 @@ document.addEventListener('DOMContentLoaded', function() {
         portfolio: `
             <div class="portfolio">
                 <div class="portfolio-hero">
-                    <h2>I'm <span class="hero-accent">Steve</span>, currently operations @ServiceNow</h2>
+                    <h2>I'm <span class="hero-accent">Steve</span>, a technical PM — most recently @ServiceNow</h2>
                     <p class="portfolio-location">📍 Based in New York</p>
-                    <p class="portfolio-subtitle">Software enthusiast. Poker player. Community Host. Video game player™.</p>
+                    <p class="portfolio-subtitle">Ships AI products with customers. Builds the rest with Claude Code. Community host. Poker player.</p>
                     <ul class="portfolio-intro-list">
-                        <li><span>Top 0.1% TFT player worldwide</span></li>
+                        <li><span>Shipped AI Data Explorer and AI Search @ServiceNow — LLM features for enterprise customers, moved from biannual to monthly releases</span></li>
+                        <li><span>Led a database migration for 20+ enterprise customers end to end, turning manual runbooks into automated templates</span></li>
+                        <li><span>Built three AI products solo this year with Claude Code — <a href="https://sweatlab.app" target="_blank">SweatLab</a> (live, paid), Porch, and Sticker Studio</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
+                        <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>Make videos — a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone (60K+ views) and <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels &amp; short films</a></span></li>
                         <li><span>50,000+ hands of poker, live and online — still in the green, ask me about the bad beats</span></li>
                         <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
@@ -277,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <a href="#" class="portfolio-filter active-filter" data-filter="all">All</a>
                     <a href="#" class="portfolio-filter" data-filter="software">Software</a>
                     <a href="#" class="portfolio-filter" data-filter="community">Community</a>
-                    <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank">Resume ↗</a>
+                    <a href="https://drive.google.com/file/d/1i2hLGsydFSY46vrlLAF_IzBOKpudiQ7s/view?usp=sharing" target="_blank">Resume ↗</a>
                     <a href="https://steviesteveee.substack.com/" target="_blank">Writing ↗</a>
                     <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">Videos ↗</a>
                 </div>
@@ -310,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <div class="portfolio-card-body">
                             <div class="portfolio-card-date">2026</div>
                             <h3>Porch</h3>
-                            <p>Website and blog hosting for small business owners. Describe your business once, Claude builds the site, and you keep it current by asking for changes.</p>
+                            <p>Website and blog hosting for small business owners. The owner asks for a change in plain language, Claude drafts it, the owner previews and publishes — a human-in-the-loop agent workflow for non-technical operators.</p>
                             <div class="portfolio-tags">
                                 <span class="portfolio-tag">Next.js</span>
                                 <span class="portfolio-tag">TypeScript</span>
@@ -1054,14 +1057,15 @@ document.addEventListener('DOMContentLoaded', function() {
             desc: 'who is this guy',
             run() {
                 termPrint('steve nguyen', 'accent');
-                termPrint('pm @ servicenow. loves code, videography, writing.');
+                termPrint('technical pm, most recently @ servicenow. ships ai products with customers, builds the rest with claude code.');
                 termPrint('currently: <span class="accent">brooklyn, ny</span>');
             }
         },
         about: {
             desc: 'the short bio',
             run() {
-                termPrint('> a pm who loves to code.');
+                termPrint('> a pm who ships code.');
+                termPrint('> turns messy customer workflows into clear product requirements.');
                 termPrint('> an iphone videographer.');
                 termPrint('> a writer who never enjoyed english class.');
             }
@@ -1204,17 +1208,17 @@ document.addEventListener('DOMContentLoaded', function() {
             desc: 'what I\'m looking for',
             run() {
                 termPrint('currently exploring full-time roles in:');
-                termPrint('  <span class="accent">→ front-end software engineering</span>');
-                termPrint('  <span class="accent">→ operations</span> <span class="muted">(with a focus on automation)</span>');
+                termPrint('  <span class="accent">→ product management</span> <span class="muted">(ai agents, applied ai)</span>');
+                termPrint('  <span class="accent">→ customer-facing product roles</span> <span class="muted">(deployments, forward-deployed pm)</span>');
                 termPrint('&nbsp;');
-                termPrint('resume → <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank" rel="noopener">view on google drive ↗</a>');
+                termPrint('resume → <a href="https://drive.google.com/file/d/1i2hLGsydFSY46vrlLAF_IzBOKpudiQ7s/view?usp=sharing" target="_blank" rel="noopener">view on google drive ↗</a>');
                 termPrint('reach out → <a href="mailto:stevetn123@gmail.com">stevetn123@gmail.com</a>');
             }
         },
         resume: {
             desc: 'my resume (google drive)',
             run() {
-                termPrint('→ <a href="https://drive.google.com/file/d/1J7bKxXZqjIcVpmddR75CqB5AJ1JxXaNE/view?usp=sharing" target="_blank" rel="noopener">resume ↗</a> <span class="muted">(opens in a new tab)</span>');
+                termPrint('→ <a href="https://drive.google.com/file/d/1i2hLGsydFSY46vrlLAF_IzBOKpudiQ7s/view?usp=sharing" target="_blank" rel="noopener">resume ↗</a> <span class="muted">(opens in a new tab)</span>');
             }
         },
         contact: {
