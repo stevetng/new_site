@@ -1174,6 +1174,16 @@ body::after {
     letter-spacing: 0.5px;
     text-transform: uppercase;
     backdrop-filter: blur(8px);
+    z-index: 2;
+}
+
+.portfolio-card-badge.badge-dev {
+    background: rgba(245, 158, 11, 0.92);
+    color: #1a1a1a;
+}
+
+.portfolio-card.portfolio-card-static {
+    cursor: default;
 }
 
 .portfolio-card-body {

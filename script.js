@@ -267,10 +267,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     <ul class="portfolio-intro-list">
                         <li><span>Top 0.1% TFT player worldwide</span></li>
                         <li><span>1,000+ event attendees across Tea Haus NYC & Friendly Beans</span></li>
-                        <li><span>Made a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone — 60K+ views</span></li>
-                        <li><span>$10K+ from live low stakes poker</span></li>
+                        <li><span>Make videos — a <a href="https://x.com/helicone_ai/status/1686840508658876419" target="_blank">launch video</a> for Helicone (60K+ views) and <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels &amp; short films</a></span></li>
+                        <li><span>Winning poker player — $50–75/hr over 50,000+ hands, live and online</span></li>
                         <li><span>Cast in a <a href="https://www.youtube.com/watch?v=YhvVftrGogk&t=19s" target="_blank">Botez Sisters</a> video — 2M+ views</span></li>
-                        <li><span>Created <a href="https://www.instagram.com/reel/CsB2FaQsch3/" target="_blank">reels</a> and short films</span></li>
                     </ul>
                 </div>
 
@@ -284,6 +283,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
 
                 <div class="portfolio-feed">
+                    <a href="https://sweatlab.app" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">sweatlab.app</span></div>
+                            <img src="preview_sweatlab.png" alt="SweatLab" class="portfolio-card-img" />
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2026</div>
+                            <h3>SweatLab</h3>
+                            <p>Session tracker and AI hand review for poker players. Paint ranges, replay a hand street by street, and get a GTO or exploit read.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">TypeScript</span>
+                                <span class="portfolio-tag">Supabase</span>
+                                <span class="portfolio-tag">Stripe</span>
+                                <span class="portfolio-tag">Claude API</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://porch-production-e216.up.railway.app/" target="_blank" class="portfolio-card" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">porch · private beta</span></div>
+                            <img src="preview_porch.png" alt="Porch" class="portfolio-card-img" />
+                            <span class="portfolio-card-badge badge-dev">In development</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2026</div>
+                            <h3>Porch</h3>
+                            <p>Website and blog hosting for small business owners. Describe your business once, Claude builds the site, and you keep it current by asking for changes.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Next.js</span>
+                                <span class="portfolio-tag">TypeScript</span>
+                                <span class="portfolio-tag">SQLite</span>
+                                <span class="portfolio-tag">Claude API</span>
+                                <span class="portfolio-tag">Docker</span>
+                            </div>
+                        </div>
+                    </a>
+                    <div class="portfolio-card portfolio-card-static" data-type="software">
+                        <div class="portfolio-card-image">
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">iOS · Sticker Studio</span></div>
+                            <img src="preview_stickerstudio.png" alt="Sticker Studio" class="portfolio-card-img" />
+                            <span class="portfolio-card-badge badge-dev">In development</span>
+                        </div>
+                        <div class="portfolio-card-body">
+                            <div class="portfolio-card-date">2026</div>
+                            <h3>Sticker Studio</h3>
+                            <p>iOS app that turns one photo into five stickers of you in a chosen style and saves them straight to the iPhone sticker drawer.</p>
+                            <div class="portfolio-tags">
+                                <span class="portfolio-tag">Expo</span>
+                                <span class="portfolio-tag">React Native</span>
+                                <span class="portfolio-tag">TypeScript</span>
+                                <span class="portfolio-tag">Gemini</span>
+                                <span class="portfolio-tag">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
                     <a href="https://github.com/stevetng/poker_bankroll" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
                             <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">localhost:5173</span></div>
@@ -1015,6 +1070,9 @@ document.addEventListener('DOMContentLoaded', function() {
             desc: 'stuff I\'ve shipped',
             run() {
                 const rows = [
+                    ['2026', 'sweatlab',                'https://sweatlab.app'],
+                    ['2026', 'porch (in development)',  'https://porch-production-e216.up.railway.app/'],
+                    ['2026', 'sticker studio (in development)', null],
                     ['2026', 'poker bankroll tracker',  'https://github.com/stevetng/poker_bankroll'],
                     ['2026', 'ai flashcard generator',  'https://web-production-a8de0.up.railway.app/'],
                     ['2025', 'prediction market terminal', 'https://prediction-market-dashboard-pi.vercel.app/'],
@@ -1024,7 +1082,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     ['2024', 'sports narrator',         'https://github.com/stevetng/sports_narrator'],
                 ];
                 rows.forEach(([year, name, url]) => {
-                    termPrint(`<span class="muted">${year}</span>  <a href="${url}" target="_blank" rel="noopener">${name}</a>`);
+                    const label = url ? `<a href="${url}" target="_blank" rel="noopener">${name}</a>` : name;
+                    termPrint(`<span class="muted">${year}</span>  ${label}`);
                 });
             }
         },
