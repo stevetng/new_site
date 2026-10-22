@@ -535,15 +535,15 @@ document.addEventListener('DOMContentLoaded', function() {
                             </div>
                         </div>
                     </a>
-                    <a href="https://www.stevee.me/" target="_blank" class="portfolio-card" data-type="software">
+                    <a href="https://www.stevee.me/#legacy/home" target="_blank" class="portfolio-card" data-type="software">
                         <div class="portfolio-card-image">
-                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">stevee.me</span></div>
+                            <div class="preview-browser-bar preview-bar-overlay"><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-dot"></span><span class="preview-url">stevee.me/#legacy</span></div>
                             <img src="preview_personalsite.png" alt="stevee.me" class="portfolio-card-img" />
                         </div>
                         <div class="portfolio-card-body">
                             <div class="portfolio-card-date">2024</div>
-                            <h3>Personal Site</h3>
-                            <p>Hand-built SPA in pure HTML/CSS/JS with custom microinteractions, keyboard navigation, and easter eggs.</p>
+                            <h3>Digital Garden (old site)</h3>
+                            <p>The first version of this site, still live under /#legacy. Hand-built SPA in pure HTML/CSS/JS with custom microinteractions, keyboard navigation, and easter eggs.</p>
                             <div class="portfolio-tags">
                                 <span class="portfolio-tag">HTML</span>
                                 <span class="portfolio-tag">CSS</span>
